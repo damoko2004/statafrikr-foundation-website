@@ -952,3 +952,64 @@ tbody tr:hover { background: var(--sage); }
 .mb-24 { margin-bottom: 24px; }
 .mb-32 { margin-bottom: 32px; }
 .hidden { display: none !important; }
+
+/* ── Bouton Don ──────────────────────────────────────────────── */
+.nav-don {
+  background: var(--amber) !important;
+  color: var(--white) !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  transition: all var(--transition) !important;
+}
+.nav-don:hover {
+  background: var(--amber-l) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Don Page ────────────────────────────────────────────────── */
+.don-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+.don-amount {
+  border: 2px solid var(--bord);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--white);
+}
+.don-amount:hover, .don-amount.selected {
+  border-color: var(--pine);
+  background: var(--sage);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.don-amount-num {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--pine);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.don-amount-label {
+  font-size: 0.8rem;
+  color: var(--mist);
+}
+.don-impact {
+  background: var(--sage);
+  border-left: 4px solid var(--pine);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 12px 0;
+  font-size: 0.9rem;
+  color: var(--slate);
+}
+.don-impact strong { color: var(--pine); }
