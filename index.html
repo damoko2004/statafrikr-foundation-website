@@ -1,42 +1,254 @@
 <!DOCTYPE html>
 <html lang="fr" data-lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="statAfrikR Foundation — Fondation panafricaine open source pour la statistique publique. Package R dédié aux INS africains. 375+ téléchargements CRAN.">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="statAfrikR Foundation — Fondation panafricaine open source pour la statistique publique africaine. Package R CRAN · Gouvernance · Formation · Partenariats INS.">
   <meta property="og:title" content="statAfrikR Foundation — La statistique africaine open source">
-  <meta property="og:description" content="Premier package R open source dédié aux INS africains. 375 téléchargements en un mois. Foundation en cours de création.">
+  <meta property="og:description" content="Premier package R open source dédié aux INS africains. 510+ téléchargements en un mois. Foundation en cours de création.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://statafrikr-foundation.org">
-  <meta name="twitter:card" content="summary_large_image">
   <title>statAfrikR Foundation — La statistique africaine open source</title>
   <link rel="stylesheet" href="assets/css/main.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"statAfrikR Foundation",
-   "url":"https://statafrikr-foundation.org","email":"diamoko@gmail.com",
-   "foundingDate":"2026","description":"Fondation panafricaine open source pour la statistique publique africaine"}
-  </script>
+  <style>
+    /* ── Nav scroll indicator ──────────────────────────────── */
+    .nav-links a {
+      position: relative;
+      transition: all 0.22s ease;
+    }
+    .nav-links a.active {
+      color: #fff !important;
+      font-weight: 700;
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 50%; right: 50%;
+      height: 2px;
+      background: var(--h-gold);
+      border-radius: 2px;
+      animation: underlineExpand 0.3s ease forwards;
+    }
+    @keyframes underlineExpand {
+      from { left: 50%; right: 50%; }
+      to   { left: 8px; right: 8px; }
+    }
+
+    /* ── Section anchor offset (nav sticky) ────────────────── */
+    .page-section { scroll-margin-top: calc(var(--nav-h) + 8px); }
+
+    /* ── Section mini-header ───────────────────────────────── */
+    .s-eyebrow {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 12px;
+    }
+    .s-eyebrow-num {
+      font-family: var(--font-title);
+      font-size: 3rem; font-weight: bold;
+      color: rgba(29,78,137,0.10);
+      line-height: 1;
+    }
+    .s-eyebrow-label {
+      font-size: 0.74rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--h-gold);
+    }
+
+    /* ── Voir plus link ─────────────────────────────────────── */
+    .voir-plus {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--h-petrol);
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s;
+      margin-top: 32px;
+    }
+    .voir-plus:hover {
+      color: var(--h-gold);
+      border-bottom-color: var(--h-gold);
+      gap: 10px;
+    }
+
+    /* ── Divider ────────────────────────────────────────────── */
+    .section-divider {
+      border: none; border-top: 1px solid var(--bord-1);
+      margin: 0;
+    }
+
+    /* ── Mission grid ───────────────────────────────────────── */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--bord-1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .mission-cell {
+      padding: 28px 24px;
+      border-right: 1px solid var(--bord-1);
+      border-bottom: 1px solid var(--bord-1);
+      transition: background 0.2s;
+    }
+    .mission-cell:hover { background: var(--petrol-bg); }
+    .mission-cell:nth-child(3n) { border-right: none; }
+    .mission-cell:nth-child(4),
+    .mission-cell:nth-child(5),
+    .mission-cell:nth-child(6) { border-bottom: none; }
+    .mission-icon { font-size: 1.6rem; margin-bottom: 10px; }
+    .mission-title { font-size: 0.92rem; font-weight: 700; color: var(--txt-1); margin-bottom: 5px; }
+    .mission-text  { font-size: 0.82rem; color: var(--txt-4); line-height: 1.5; }
+
+    /* ── Valeurs grid ───────────────────────────────────────── */
+    .valeurs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 32px;
+    }
+    .valeur-card {
+      padding: 22px; border-radius: var(--radius);
+      border: 1px solid var(--bord-1); background: var(--bg-0);
+    }
+    .valeur-title { font-size: 0.88rem; font-weight: 700; color: var(--h-petrol); margin-bottom: 6px; }
+    .valeur-text  { font-size: 0.8rem; color: var(--txt-4); line-height: 1.5; }
+
+    /* ── Org mini ───────────────────────────────────────────── */
+    .org-mini {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 12px; margin: 32px 0;
+    }
+    .org-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .org-box {
+      padding: 12px 20px; border-radius: var(--radius);
+      font-size: 0.82rem; font-weight: 600; text-align: center;
+      border: 1px solid;
+    }
+    .org-box-navy  { background: var(--h-navy);  color: #F5F7FA; border-color: var(--h-navy); }
+    .org-box-pet   { background: var(--h-petrol); color: #F5F7FA; border-color: var(--h-petrol); }
+    .org-box-green { background: var(--h-green);  color: #F5F7FA; border-color: var(--h-green); }
+    .org-box-gold  { background: var(--gold-bg);  color: var(--h-gold); border-color: var(--h-gold); }
+    .org-box-light { background: var(--bg-0); color: var(--txt-2); border-color: var(--bord-1); }
+    .org-arrow { color: var(--bord-2); font-size: 1.2rem; text-align: center; }
+
+    /* ── Package tab mini ───────────────────────────────────── */
+    .pkg-tabs { display: flex; gap: 0; border: 1px solid var(--bord-1); border-radius: var(--radius-lg); overflow: hidden; margin-top: 32px; }
+    .pkg-tab { flex: 1; padding: 16px 12px; text-align: center; background: var(--bg-0); border-right: 1px solid var(--bord-1); cursor: pointer; transition: all 0.2s; }
+    .pkg-tab:last-child { border-right: none; }
+    .pkg-tab.active, .pkg-tab:hover { background: var(--h-navy); }
+    .pkg-tab.active .pkg-tab-num, .pkg-tab:hover .pkg-tab-num { color: var(--h-gold); }
+    .pkg-tab.active .pkg-tab-name, .pkg-tab:hover .pkg-tab-name { color: #F5F7FA; }
+    .pkg-tab-num { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: var(--h-gold); margin-bottom: 4px; }
+    .pkg-tab-name { font-size: 0.85rem; font-weight: 700; color: var(--txt-1); }
+    .pkg-fns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pkg-fn { background: var(--petrol-bg); color: var(--h-petrol); padding: 4px 12px; border-radius: 100px; font-size: 0.78rem; font-family: var(--font-code); border: 1px solid var(--bord-1); }
+
+    /* ── Formation jours ────────────────────────────────────── */
+    .jours-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+    .jour-card { padding: 16px; border-radius: var(--radius); border: 1px solid var(--bord-1); background: var(--bg-0); }
+    .jour-num  { font-size: 0.7rem; font-weight: 700; color: var(--h-gold); letter-spacing: 0.08em; margin-bottom: 5px; }
+    .jour-title{ font-size: 0.88rem; font-weight: 700; color: var(--txt-1); margin-bottom: 4px; }
+    .jour-desc { font-size: 0.78rem; color: var(--txt-4); line-height: 1.4; }
+
+    /* ── Roadmap timeline mini ──────────────────────────────── */
+    .rm-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .rm-phase { border-radius: var(--radius-lg); padding: 28px 22px; }
+    .rm-phase-year { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 6px; }
+    .rm-phase-title { font-family: var(--font-title); font-size: 1.2rem; color: #F5F7FA; margin-bottom: 12px; }
+    .rm-phase-items { list-style: none; }
+    .rm-phase-items li { font-size: 0.82rem; color: rgba(245,247,250,0.75); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .rm-phase-items li::before { content: '▸ '; opacity: 0.5; }
+
+    /* ── Jalons strip ───────────────────────────────────────── */
+    .jalons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .jalon {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 100px;
+      font-size: 0.80rem; border: 1px solid var(--bord-1);
+      background: var(--bg-0);
+    }
+    .jalon-date { font-weight: 700; color: var(--h-petrol); font-size: 0.74rem; }
+    .jalon-text { color: var(--txt-3); }
+
+    /* ── Communauté CTA grid ───────────────────────────────── */
+    .comm-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+    .comm-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 22px; border-radius: var(--radius-lg);
+      border: 1px solid var(--bord-1); background: var(--bg-0);
+      text-decoration: none; transition: all 0.22s;
+    }
+    .comm-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--bord-2); }
+    .comm-icon { font-size: 2rem; flex-shrink: 0; }
+    .comm-title { font-weight: 700; color: var(--txt-1); font-size: 0.95rem; }
+    .comm-desc  { font-size: 0.82rem; color: var(--txt-4); margin-top: 2px; }
+
+    /* ── Don montants ───────────────────────────────────────── */
+    .don-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+    .don-chip {
+      padding: 14px 24px; border-radius: var(--radius);
+      border: 2px solid var(--bord-1); background: var(--bg-0);
+      cursor: pointer; text-align: center; transition: all 0.2s;
+      min-width: 100px;
+    }
+    .don-chip:hover, .don-chip.sel {
+      border-color: var(--h-petrol); background: var(--petrol-bg);
+    }
+    .don-chip-num   { font-family: var(--font-title); font-size: 1.6rem; font-weight: bold; color: var(--h-navy); }
+    .don-chip-label { font-size: 0.74rem; color: var(--txt-4); margin-top: 2px; }
+
+    /* ── Partenariat split ──────────────────────────────────── */
+    .part-split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border: 1px solid var(--bord-1); border-radius: var(--radius-lg);
+      overflow: hidden; margin-top: 32px;
+    }
+    .part-col { padding: 32px; }
+    .part-col-title { font-weight: 700; font-size: 0.92rem; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--bord-1); }
+    .part-item { display: flex; gap: 10px; margin-bottom: 12px; font-size: 0.88rem; color: var(--txt-3); align-items: flex-start; }
+    .part-item::before { flex-shrink: 0; margin-top: 1px; }
+    .part-apporte .part-item::before { content: '→'; color: var(--txt-4); }
+    .part-recoit  .part-item::before { content: '✓'; color: var(--h-green); font-weight: 700; }
+
+    /* Responsive landing ────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .mission-grid { grid-template-columns: 1fr; }
+      .mission-cell { border-right: none; }
+      .valeurs-grid { grid-template-columns: 1fr 1fr; }
+      .jours-grid   { grid-template-columns: 1fr 1fr; }
+      .rm-phases    { grid-template-columns: 1fr; }
+      .comm-grid    { grid-template-columns: 1fr; }
+      .part-split   { grid-template-columns: 1fr; }
+      .pkg-tabs     { flex-wrap: wrap; }
+      .pkg-tab      { border-bottom: 1px solid var(--bord-1); }
+    }
+    @media (max-width: 600px) {
+      .valeurs-grid { grid-template-columns: 1fr; }
+      .jours-grid   { grid-template-columns: 1fr; }
+      .s-eyebrow-num { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ── Navigation ───────────────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════════ -->
 <nav class="nav" role="navigation" aria-label="Navigation principale">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Accueil statAfrikR Foundation">
+    <a href="#hero" class="nav-logo" aria-label="Accueil statAfrikR Foundation">
       <div class="nav-logo-text">
         <span class="nav-logo-name">statAfrikR</span>
         <span class="nav-logo-sub">Foundation</span>
       </div>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="foundation.html" data-i18n="nav.fondation">Fondation</a></li>
-      <li><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a></li>
-      <li><a href="package.html" data-i18n="nav.package">Package</a></li>
-      <li><a href="formation.html" data-i18n="nav.formation">Formation</a></li>
-      <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
-      <li><a href="communaute.html" data-i18n="nav.communaute">Communauté</a></li>
-      <li><a href="don.html" class="nav-don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
-      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+      <li><a href="#fondation"   data-section="fondation">Fondation</a></li>
+      <li><a href="#gouvernance" data-section="gouvernance">Gouvernance</a></li>
+      <li><a href="#package"     data-section="package">Package</a></li>
+      <li><a href="#formation"   data-section="formation">Formation</a></li>
+      <li><a href="#roadmap"     data-section="roadmap">Roadmap</a></li>
+      <li><a href="#communaute"  data-section="communaute">Communauté</a></li>
+      <li><a href="#don"         class="nav-don" data-section="don">Faire un don</a></li>
+      <li><a href="#partenariat" class="nav-cta" data-section="partenariat">Devenir partenaire</a></li>
     </ul>
     <div class="nav-lang">
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -46,11 +258,13 @@
   </div>
 </nav>
 
-<!-- ── Hero ─────────────────────────────────────────────────── -->
-<header class="hero" role="banner">
-  <div class="hero-inner">
+<main>
 
-    <!-- Colonne gauche : contenu -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════════ -->
+<header class="hero" id="hero" role="banner">
+  <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge">Package CRAN officiel · Avril 2026</div>
       <h1>statAfrikR<br>Foundation</h1>
@@ -59,10 +273,10 @@
         &ldquo;statAfrikR est conçu par et pour les statisticiens africains.&rdquo;
       </blockquote>
       <div class="hero-actions">
-        <a href="package.html" class="btn btn-primary">Découvrir statAfrikR</a>
-        <a href="partenariat.html" class="btn btn-outline">Devenir partenaire INS</a>
+        <a href="#package"     class="btn btn-primary">Découvrir statAfrikR</a>
+        <a href="#partenariat" class="btn btn-outline">Devenir partenaire INS</a>
       </div>
-      <div class="hero-stats" role="region" aria-label="Statistiques clés">
+      <div class="hero-stats">
         <div>
           <div class="hero-stat-num" id="cran-total">...</div>
           <div class="hero-stat-label">Téléchargements CRAN<br>depuis le 3 avril 2026</div>
@@ -81,269 +295,543 @@
         </div>
       </div>
     </div>
-
-    <!-- Colonne droite : hex wall -->
     <div class="hero-hex-wall" aria-hidden="true">
-      <img src="assets/img/hero-hexes.svg"
-           id="hex-svg"
-           alt="Écosystème R statAfrikR"
-           loading="eager">
+      <img src="assets/img/hero-hexes.svg" id="hex-svg" alt="Écosystème R statAfrikR" loading="eager">
     </div>
-
   </div>
 </header>
 
-<main>
-<!-- ── Installation Code ─────────────────────────────────────── -->
-<section aria-labelledby="install-title" style="background:var(--h-night);padding:48px 0;">
-  <div class="container container-sm">
-    <h2 id="install-title" style="color:var(--white);text-align:center;margin-bottom:8px;" class="fade-in">Installer statAfrikR en 30 secondes</h2>
-    <p style="color:rgba(255,255,255,0.55);text-align:center;margin:0 auto 28px;" class="fade-in">Disponible sur le CRAN officiel · Open source · GPL-3 · Hors ligne</p>
-    <div class="code-block fade-in" role="region" aria-label="Code d'installation R">
-      <button class="copy-btn" aria-label="Copier le code">Copier</button>
-      <pre><span class="code-comment"># Depuis le CRAN (recommandé)</span>
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     01 — FONDATION
+═══════════════════════════════════════════════════════════════ -->
+<section id="fondation" class="page-section" aria-labelledby="fondation-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">01</span>
+      <div>
+        <div class="s-eyebrow-label">La Fondation</div>
+        <h2 id="fondation-title">Vision, Mission &amp; Valeurs</h2>
+      </div>
+    </div>
+
+    <div class="box-vision fade-in">
+      Devenir l'infrastructure open source panafricaine de référence pour la statistique publique,
+      l'innovation analytique et la reproductibilité scientifique en Afrique — reconnue et utilisée
+      par les INS, les universités, les organisations régionales et les partenaires internationaux,
+      à l'image de ce que représentent la R Foundation ou l'Apache Software Foundation dans leurs
+      écosystèmes respectifs.
+    </div>
+
+    <div class="mission-grid fade-in">
+      <div class="mission-cell">
+        <div class="mission-icon">📦</div>
+        <div class="mission-title">Développer et maintenir</div>
+        <div class="mission-text">Écosystème statAfrikR · GPL-3 · CRAN · GitHub · Processus de release rigoureux</div>
+      </div>
+      <div class="mission-cell">
+        <div class="mission-icon">🎓</div>
+        <div class="mission-title">Former et certifier</div>
+        <div class="mission-text">Programme intensif 10 jours · academy.statafrikr-foundation.org · 3 niveaux de certification</div>
+      </div>
+      <div class="mission-cell">
+        <div class="mission-icon">🌍</div>
+        <div class="mission-title">Harmoniser</div>
+        <div class="mission-text">Méthodes communes UEMOA · CEDEAO · CEMAC · COMESA · SADC · UMA</div>
+      </div>
+      <div class="mission-cell">
+        <div class="mission-icon">📡</div>
+        <div class="mission-title">Diffuser et archiver</div>
+        <div class="mission-text">Standards DDI · SDMX · Linked Data · Open data statistique africain</div>
+      </div>
+      <div class="mission-cell">
+        <div class="mission-icon">🔬</div>
+        <div class="mission-title">Rechercher et innover</div>
+        <div class="mission-text">Statistique appliquée · IA · SIG · Gouvernance des données publiques</div>
+      </div>
+      <div class="mission-cell">
+        <div class="mission-icon">🏛️</div>
+        <div class="mission-title">Accompagner les États</div>
+        <div class="mission-text">Transformation numérique des INS · Intégration réseaux statistiques régionaux</div>
+      </div>
+    </div>
+
+    <div class="valeurs-grid fade-in">
+      <div class="valeur-card"><div class="valeur-title">🏴 Souveraineté</div><div class="valeur-text">Outils africains pour l'Afrique. Aucune dépendance à un éditeur unique. Code libre, gouvernance collective.</div></div>
+      <div class="valeur-card"><div class="valeur-title">🔍 Transparence</div><div class="valeur-text">Code ouvert sur GitHub. Méthodes publiées. Comptes audités annuellement et publiés.</div></div>
+      <div class="valeur-card"><div class="valeur-title">🤝 Inclusion</div><div class="valeur-text">Multilingue FR/EN/PT. Fonctionnel hors ligne. Gratuit pour les INS partenaires.</div></div>
+      <div class="valeur-card"><div class="valeur-title">📐 Rigueur</div><div class="valeur-text">Normes ISI, OCDE, AFRISTAT, SDMX. Couverture de tests &gt; 90%. Documentation exhaustive.</div></div>
+      <div class="valeur-card"><div class="valeur-title">⏳ Pérennité</div><div class="valeur-text">Fonds de dotation. Financement diversifié (règle des 40%). Gouvernance anti-capture.</div></div>
+      <div class="valeur-card"><div class="valeur-title">🌱 Solidarité</div><div class="valeur-text">Réseau panafricain. Priorité aux INS à ressources limitées. Partage des savoirs.</div></div>
+    </div>
+
+    <a href="foundation.html" class="voir-plus">Voir la page complète Fondation →</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     02 — GOUVERNANCE
+═══════════════════════════════════════════════════════════════ -->
+<section id="gouvernance" class="page-section" style="background:var(--bg-0);" aria-labelledby="gouv-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">02</span>
+      <div>
+        <div class="s-eyebrow-label">Gouvernance</div>
+        <h2 id="gouv-title">Architecture institutionnelle &amp; anti-capture</h2>
+      </div>
+    </div>
+    <p class="fade-in" style="max-width:65ch;margin-bottom:8px;">Modèle inspiré de la <strong>DuckDB Foundation</strong> — séparation stricte entre le bien commun open source (Foundation) et les activités commerciales (entités distinctes). Aucun acteur ne détient plus de <strong>25% des voix</strong>.</p>
+
+    <div class="org-mini fade-in">
+      <div class="org-row">
+        <div class="org-box org-box-navy" style="min-width:260px;">
+          Conseil d'administration (Board)<br>
+          <small style="opacity:0.7;font-size:0.75rem;">5 à 9 membres · 4 collèges · ≥ 2 réunions/an</small>
+        </div>
+      </div>
+      <div class="org-arrow">↓</div>
+      <div class="org-row">
+        <div class="org-box org-box-pet">Comité scientifique<br><small style="opacity:0.7;font-size:0.72rem;">Trimestriel · normes ISI/OCDE</small></div>
+        <div class="org-box org-box-pet">Comité technique OS<br><small style="opacity:0.7;font-size:0.72rem;">Mensuel · CRAN · CI/CD</small></div>
+        <div class="org-box org-box-pet">Comité partenariats<br><small style="opacity:0.7;font-size:0.72rem;">Trimestriel · INS · bailleurs</small></div>
+      </div>
+      <div class="org-arrow">↓</div>
+      <div class="org-row">
+        <div class="org-box org-box-green">Secrétariat exécutif<br><small style="opacity:0.8;font-size:0.72rem;">Coordination opérationnelle</small></div>
+        <div class="org-box org-box-green">Réseau mainteneurs régionaux<br><small style="opacity:0.8;font-size:0.72rem;">4 zones africaines</small></div>
+        <div class="org-box org-box-gold">Référent conformité &amp; éthique<br><small style="font-size:0.72rem;">Déclarations d'intérêts</small></div>
+      </div>
+      <div class="org-arrow">↓</div>
+      <div class="org-row">
+        <div class="org-box org-box-light">INS partenaires</div>
+        <div class="org-box org-box-light">Universités</div>
+        <div class="org-box org-box-light">Bailleurs</div>
+        <div class="org-box org-box-light">Communauté</div>
+      </div>
+    </div>
+
+    <div class="college-grid fade-in" style="margin-top:32px;">
+      <div class="college-card">
+        <div class="college-num">I</div>
+        <div class="college-title">Collège fondateur</div>
+        <div class="college-name">Dikers Amoko</div>
+        <p class="college-desc">Membre de droit. Voix prépondérante 5 ans. 1 siège permanent.</p>
+      </div>
+      <div class="college-card">
+        <div class="college-num">II</div>
+        <div class="college-title">Collège INS africains</div>
+        <div class="college-name">INS partenaires signataires</div>
+        <p class="college-desc">Représentants des INS ayant signé un MoU. 1 à 2 sièges · 3 ans.</p>
+      </div>
+      <div class="college-card">
+        <div class="college-num">III</div>
+        <div class="college-title">Collège académique</div>
+        <div class="college-name">Universitaires africains</div>
+        <p class="college-desc">ENSEA, ISSEA, ENEA, FASEG… 1 à 2 sièges · 3 ans.</p>
+      </div>
+      <div class="college-card">
+        <div class="college-num">IV</div>
+        <div class="college-title">Collège experts indépendants</div>
+        <div class="college-name">Personnalités qualifiées</div>
+        <p class="college-desc">Data, open source, financement. 2 à 4 sièges · 3 ans.</p>
+      </div>
+    </div>
+
+    <div class="anticapture-note fade-in">
+      <strong>Clause anti-capture (Art. 12 des Statuts v2.0) :</strong> Aucun acteur — INS hôte, bailleur, gouvernement ou fondateur — ne peut détenir plus de 25% des voix au Conseil d'administration.
+    </div>
+
+    <a href="gouvernance.html" class="voir-plus">Voir la gouvernance complète — Matrice décisions · Calendrier annuel →</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     03 — PACKAGE
+═══════════════════════════════════════════════════════════════ -->
+<section id="package" class="page-section" aria-labelledby="pkg-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">03</span>
+      <div>
+        <div class="s-eyebrow-label">Le package statAfrikR</div>
+        <h2 id="pkg-title">Premier package R open source dédié aux INS africains</h2>
+      </div>
+    </div>
+
+    <div class="kpi-row fade-in">
+      <div class="kpi-item"><div class="kpi-num cran-total-val">510+</div><div class="kpi-label">Téléchargements CRAN</div></div>
+      <div class="kpi-item"><div class="kpi-num">40+</div><div class="kpi-label">Fonctions documentées</div></div>
+      <div class="kpi-item"><div class="kpi-num">5</div><div class="kpi-label">Modules intégrés</div></div>
+      <div class="kpi-item"><div class="kpi-num">237</div><div class="kpi-label">Tests unitaires</div></div>
+    </div>
+
+    <div class="pkg-tabs fade-in" role="tablist" id="pkg-tablist">
+      <div class="pkg-tab active" role="tab" data-tab="0">
+        <div class="pkg-tab-num">MODULE 01</div>
+        <div class="pkg-tab-name">Collecte</div>
+      </div>
+      <div class="pkg-tab" role="tab" data-tab="1">
+        <div class="pkg-tab-num">MODULE 02</div>
+        <div class="pkg-tab-name">Traitement</div>
+      </div>
+      <div class="pkg-tab" role="tab" data-tab="2">
+        <div class="pkg-tab-num">MODULE 03</div>
+        <div class="pkg-tab-name">Analyse</div>
+      </div>
+      <div class="pkg-tab" role="tab" data-tab="3">
+        <div class="pkg-tab-num">MODULE 04</div>
+        <div class="pkg-tab-name">Visualisation</div>
+      </div>
+      <div class="pkg-tab" role="tab" data-tab="4">
+        <div class="pkg-tab-num">MODULE 05</div>
+        <div class="pkg-tab-name">Diffusion</div>
+      </div>
+    </div>
+
+    <div id="pkg-panel" class="pkg-fns fade-in" style="min-height:54px;">
+      <span class="pkg-fn">import_excel()</span>
+      <span class="pkg-fn">import_kobo()</span>
+      <span class="pkg-fn">import_cspro()</span>
+      <span class="pkg-fn">import_stata()</span>
+      <span class="pkg-fn">import_spss()</span>
+      <span class="pkg-fn">import_odk()</span>
+      <span class="pkg-fn">import_sas()</span>
+      <span class="pkg-fn">valider_dictionnaire()</span>
+    </div>
+
+    <div class="code-block fade-in" style="margin-top:32px;">
+      <button class="copy-btn" aria-label="Copier">Copier</button>
+      <pre><span class="code-comment"># Installation depuis le CRAN officiel</span>
 <span class="code-fn">install.packages</span>(<span class="code-str">"statAfrikR"</span>)
-
-<span class="code-comment"># Charger et vérifier</span>
 <span class="code-fn">library</span>(statAfrikR)
-<span class="code-fn">packageVersion</span>(<span class="code-str">'statAfrikR'</span>)  <span class="code-comment"># → '0.1.0'</span>
 
-<span class="code-comment"># Premier usage — importer une enquête</span>
-donnees &lt;- <span class="code-fn">import_excel</span>(<span class="code-str">"mon_enquete.xlsx"</span>)
-<span class="code-fn">check_na</span>(donnees)</pre>
+<span class="code-comment"># Pipeline complet — de l'enquête au rapport</span>
+donnees &lt;- <span class="code-fn">import_excel</span>(<span class="code-str">"enquete.xlsx"</span>)
+<span class="code-fn">check_na</span>(donnees, seuil = 0.1)
+plan    &lt;- <span class="code-fn">appliquer_ponderations</span>(donnees, <span class="code-str">"poids"</span>, <span class="code-str">"grappe"</span>, <span class="code-str">"strate"</span>)
+ipm     &lt;- <span class="code-fn">calcul_ipm</span>(donnees, indicateurs = list(...), seuil = 1/3)
+<span class="code-fn">generer_rapport</span>(titre = <span class="code-str">"Rapport pauvreté 2026"</span>, sortie_format = <span class="code-str">"word"</span>)</pre>
     </div>
-    <p style="text-align:center;margin-top:16px;">
-      <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener" style="color:var(--amber);font-size:0.9rem;">Voir sur le CRAN →</a>
-      &nbsp;&nbsp;
-      <a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.5);font-size:0.9rem;">Documentation pkgdown →</a>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+      <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Voir sur le CRAN</a>
+      <a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Documentation pkgdown</a>
+      <a href="package.html" class="voir-plus" style="margin-top:0;align-self:center;">Toutes les 40 fonctions →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     04 — FORMATION
+═══════════════════════════════════════════════════════════════ -->
+<section id="formation" class="page-section" style="background:var(--bg-0);" aria-labelledby="form-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">04</span>
+      <div>
+        <div class="s-eyebrow-label">Programme de formation</div>
+        <h2 id="form-title">Renforcement des capacités statistiques · 10 jours</h2>
+      </div>
+    </div>
+
+    <div class="kpi-row fade-in" style="margin-bottom:32px;">
+      <div class="kpi-item"><div class="kpi-num">10</div><div class="kpi-label">Jours de formation</div></div>
+      <div class="kpi-item"><div class="kpi-num">80h</div><div class="kpi-label">Contenu intensif</div></div>
+      <div class="kpi-item"><div class="kpi-num">30</div><div class="kpi-label">Participants max / session</div></div>
+      <div class="kpi-item"><div class="kpi-num">3</div><div class="kpi-label">Niveaux certification</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="fade-in">
+      <!-- Phase 1 -->
+      <div style="border-radius:var(--radius-lg);background:var(--green-bg);padding:28px;border:1px solid rgba(47,111,95,0.20);">
+        <div style="font-size:0.72rem;font-weight:700;color:var(--h-green);letter-spacing:0.1em;margin-bottom:8px;">PHASE 1 — 6 jours</div>
+        <h3 style="color:var(--txt-1);font-size:1.05rem;margin-bottom:16px;">Formation technique</h3>
+        <div class="jours-grid" style="grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="jour-card"><div class="jour-num">JOUR 1</div><div class="jour-title">Introduction R</div><div class="jour-desc">RStudio · Objets · Import multi-format</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 2</div><div class="jour-title">Tidyverse I</div><div class="jour-desc">dplyr, tidyr · Pipelines · Nettoyage</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 3</div><div class="jour-title">Tidyverse II</div><div class="jour-desc">ggplot2 · Graphiques institutionnels</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 4</div><div class="jour-title">Analyse</div><div class="jour-desc">Pondération · FGT · IDH · Régression</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 5</div><div class="jour-title">statAfrikR</div><div class="jour-desc">40 fonctions · IDH, IPM, Gini</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 6</div><div class="jour-title">Cas pratiques</div><div class="jour-desc">Données réelles de votre INS</div></div>
+        </div>
+      </div>
+      <!-- Phase 2 -->
+      <div style="border-radius:var(--radius-lg);background:var(--gold-bg);padding:28px;border:1px solid rgba(184,135,47,0.20);">
+        <div style="font-size:0.72rem;font-weight:700;color:var(--h-gold);letter-spacing:0.1em;margin-bottom:8px;">PHASE 2 — 4 jours</div>
+        <h3 style="color:var(--txt-1);font-size:1.05rem;margin-bottom:16px;">Atelier stratégique institutionnel</h3>
+        <div class="jours-grid" style="grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="jour-card"><div class="jour-num">JOUR 7</div><div class="jour-title">Diagnostic</div><div class="jour-desc">Audit outils · Cartographie flux</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 8</div><div class="jour-title">Architecture</div><div class="jour-desc">Adaptation données nationales</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 9</div><div class="jour-title">Modules prioritaires</div><div class="jour-desc">Feuille de route 12–24 mois</div></div>
+          <div class="jour-card"><div class="jour-num">JOUR 10</div><div class="jour-title">Gouvernance</div><div class="jour-desc">Présentation direction · MoU</div></div>
+        </div>
+        <div style="margin-top:16px;padding:14px;background:var(--bg-0);border-radius:var(--radius);border:1px solid var(--bord-1);">
+          <div style="font-size:0.78rem;font-weight:700;color:var(--txt-1);margin-bottom:8px;">Certification statAfrikR</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:var(--petrol-bg);color:var(--h-petrol);padding:3px 10px;border-radius:100px;font-size:0.74rem;font-weight:700;">Niveau 1 · 50€</span>
+            <span style="background:var(--petrol-bg);color:var(--h-petrol);padding:3px 10px;border-radius:100px;font-size:0.74rem;font-weight:700;">Niveau 2 · 150€</span>
+            <span style="background:var(--petrol-bg);color:var(--h-petrol);padding:3px 10px;border-radius:100px;font-size:0.74rem;font-weight:700;">Niveau 3 · Expert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="formation.html" class="voir-plus">Programme détaillé · livrables par jour · certifications →</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     05 — ROADMAP
+═══════════════════════════════════════════════════════════════ -->
+<section id="roadmap" class="page-section" aria-labelledby="rm-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">05</span>
+      <div>
+        <div class="s-eyebrow-label">Feuille de route</div>
+        <h2 id="rm-title">Roadmap 2026 – 2028</h2>
+      </div>
+    </div>
+
+    <div class="rm-phases fade-in">
+      <div class="rm-phase phase-pine">
+        <div class="rm-phase-year">PHASE 1 · 2026</div>
+        <div class="rm-phase-title">Fondation</div>
+        <ul class="rm-phase-items">
+          <li>Création juridique · préfecture</li>
+          <li>statAfrikR v0.2.0 sur CRAN</li>
+          <li>Signature MoU INS fondateur</li>
+          <li>1er financement ≥ 50 000 €</li>
+          <li>1re session de formation</li>
+        </ul>
+      </div>
+      <div class="rm-phase phase-amber">
+        <div class="rm-phase-year">PHASE 2 · 2027</div>
+        <div class="rm-phase-title">Expansion</div>
+        <ul class="rm-phase-items">
+          <li>statAfrikPoverty · Maps sur CRAN</li>
+          <li>Plateforme e-learning lancée</li>
+          <li>5 INS fondateurs signataires</li>
+          <li>500 statisticiens formés</li>
+          <li>Budget &gt; 205 000 €</li>
+        </ul>
+      </div>
+      <div class="rm-phase phase-ink">
+        <div class="rm-phase-year">PHASE 3 · 2028</div>
+        <div class="rm-phase-title">Institutionnalisation</div>
+        <ul class="rm-phase-items">
+          <li>10 INS membres actifs</li>
+          <li>1 000 statisticiens certifiés</li>
+          <li>Portail statistique africain</li>
+          <li>Reconnaissance UA-STATCOM</li>
+          <li>Budget &gt; 550 000 €</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="jalons fade-in">
+      <div class="jalon"><span class="jalon-date">T2 2026</span><span class="jalon-text">Création juridique</span></div>
+      <div class="jalon"><span class="jalon-date">T3 2026</span><span class="jalon-text">statAfrikR v0.2.0 CRAN</span></div>
+      <div class="jalon"><span class="jalon-date">T3 2026</span><span class="jalon-text">MoU INS fondateur</span></div>
+      <div class="jalon"><span class="jalon-date">T4 2026</span><span class="jalon-text">1er financement</span></div>
+      <div class="jalon"><span class="jalon-date">T1 2027</span><span class="jalon-text">statAfrikPoverty CRAN</span></div>
+      <div class="jalon"><span class="jalon-date">T2 2027</span><span class="jalon-text">E-learning lancé</span></div>
+      <div class="jalon"><span class="jalon-date">T4 2027</span><span class="jalon-text">Reconnaissance UA-STATCOM</span></div>
+      <div class="jalon"><span class="jalon-date">T2 2028</span><span class="jalon-text">Portail africain v1</span></div>
+      <div class="jalon"><span class="jalon-date">T4 2028</span><span class="jalon-text">10 INS · 1 000 certifiés</span></div>
+    </div>
+
+    <a href="roadmap.html" class="voir-plus">Voir les 11 jalons détaillés + 12 packages prévus →</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     06 — COMMUNAUTÉ
+═══════════════════════════════════════════════════════════════ -->
+<section id="communaute" class="page-section" style="background:var(--bg-0);" aria-labelledby="comm-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">06</span>
+      <div>
+        <div class="s-eyebrow-label">Communauté</div>
+        <h2 id="comm-title">Rejoindre l'écosystème statAfrikR</h2>
+      </div>
+    </div>
+
+    <div class="stats-grid fade-in">
+      <div class="stat-card"><div class="stat-num cran-total-val">510+</div><div class="stat-label">Téléchargements CRAN</div></div>
+      <div class="stat-card"><div class="stat-num" id="gh-stars">—</div><div class="stat-label">GitHub stars</div></div>
+      <div class="stat-card"><div class="stat-num" id="gh-forks">—</div><div class="stat-label">GitHub forks</div></div>
+      <div class="stat-card"><div class="stat-num" id="gh-issues">—</div><div class="stat-label">Issues ouvertes</div></div>
+    </div>
+
+    <div class="comm-grid fade-in">
+      <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener" class="comm-card">
+        <div class="comm-icon">💬</div>
+        <div><div class="comm-title">Discord · Communauté active</div><div class="comm-desc">Support, annonces releases, mentorat, discussions techniques</div></div>
+      </a>
+      <a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener" class="comm-card">
+        <div class="comm-icon">⚙️</div>
+        <div><div class="comm-title">GitHub · Code source ouvert</div><div class="comm-desc">Issues, Pull Requests, roadmap publique, CONTRIBUTING.md</div></div>
+      </a>
+      <a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener" class="comm-card">
+        <div class="comm-icon">📖</div>
+        <div><div class="comm-title">Vignette CRAN · Démarrage rapide</div><div class="comm-desc">Guide complet d'utilisation avec exemples sur données réelles</div></div>
+      </a>
+      <a href="formation.html#certification" class="comm-card">
+        <div class="comm-icon">🎓</div>
+        <div><div class="comm-title">Certification statAfrikR</div><div class="comm-desc">3 niveaux reconnus · Utilisateur · Praticien · Expert</div></div>
+      </a>
+    </div>
+
+    <div id="cran-chart" class="fade-in" style="margin-top:40px;" aria-label="Graphique téléchargements CRAN" role="img">
+      <svg viewBox="0 0 700 200" style="width:100%;"><text x="350" y="110" text-anchor="middle" font-family="Arial" font-size="13" fill="#64748B">Chargement des statistiques...</text></svg>
+    </div>
+
+    <a href="communaute.html" class="voir-plus">Page communauté complète →</a>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     07 — FAIRE UN DON
+═══════════════════════════════════════════════════════════════ -->
+<section id="don" class="page-section" aria-labelledby="don-title">
+  <div class="container">
+    <div class="s-eyebrow">
+      <span class="s-eyebrow-num">07</span>
+      <div>
+        <div class="s-eyebrow-label">Soutenir la mission</div>
+        <h2 id="don-title">Faire un don à la statAfrikR Foundation</h2>
+      </div>
+    </div>
+    <p style="max-width:60ch;margin-bottom:8px;">Votre don finance le développement open source, les formations gratuites pour les INS africains et les certifications statAfrikR.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:32px;" class="fade-in">
+      <div>
+        <div class="don-row">
+          <div class="don-chip sel" onclick="selDon(10,this)"><div class="don-chip-num">10 €</div><div class="don-chip-label">Contributeur</div></div>
+          <div class="don-chip"    onclick="selDon(25,this)"><div class="don-chip-num">25 €</div><div class="don-chip-label">Soutien</div></div>
+          <div class="don-chip"    onclick="selDon(50,this)"><div class="don-chip-num">50 €</div><div class="don-chip-label">Partenaire</div></div>
+          <div class="don-chip"    onclick="selDon(150,this)"><div class="don-chip-num">150 €</div><div class="don-chip-label">Bienfaiteur</div></div>
+        </div>
+        <div class="don-impact" id="don-impact" style="margin-top:16px;">
+          <strong>10 €</strong> = 1 vignette pédagogique développée pour un INS africain.
+        </div>
+        <div style="margin-top:20px;font-size:0.82rem;color:var(--txt-4);padding:14px;background:var(--gold-bg);border-radius:var(--radius);border:1px solid rgba(184,135,47,0.20);">
+          🧾 <strong>Don déductible à 66%</strong> · Fonds de dotation · Loi n°2008-776 · Reçu fiscal automatique
+        </div>
+      </div>
+      <div>
+        <a href="https://www.helloasso.com" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:10px;font-size:0.95rem;padding:15px;">
+          💳 Faire un don via HelloAsso
+        </a>
+        <p style="font-size:0.78rem;color:var(--txt-4);text-align:center;margin-bottom:20px;">Paiement sécurisé · 0% commission · Reçu fiscal automatique</p>
+        <div style="display:flex;gap:10px;">
+          <a href="mailto:diamoko@gmail.com?subject=Don — virement" class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">🏦 Virement</a>
+          <a href="https://paypal.me/statafrikr" target="_blank" rel="noopener" class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">💙 PayPal</a>
+        </div>
+        <a href="don.html" class="voir-plus" style="margin-top:20px;">Voir la page de don complète →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     08 — PARTENARIAT
+═══════════════════════════════════════════════════════════════ -->
+<section id="partenariat" class="page-section" style="background:var(--h-night);padding:88px 0;" aria-labelledby="part-title">
+  <div class="container">
+    <div class="s-eyebrow" style="margin-bottom:12px;">
+      <span class="s-eyebrow-num" style="color:rgba(255,255,255,0.10);">08</span>
+      <div>
+        <div class="s-eyebrow-label">Opportunité unique</div>
+        <h2 id="part-title" style="color:#F5F7FA;">Le premier INS qui signe devient l'Institution Fondatrice</h2>
+      </div>
+    </div>
+    <p style="color:var(--light2);max-width:62ch;margin-bottom:40px;" class="fade-in">
+      Le siège de la statAfrikR Foundation sera établi dans l'INS du premier Directeur Général qui formalisera ce partenariat. Cette distinction n'appartiendra qu'à un seul INS sur le continent africain.
     </p>
-  </div>
-</section>
 
-<!-- ── Pourquoi statAfrikR ───────────────────────────────────── -->
-<section aria-labelledby="why-title">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Valeur ajoutée</p>
-      <h2 id="why-title" class="section-title fade-in">Pourquoi statAfrikR est stratégique pour les INS</h2>
-      <p class="section-sub fade-in" style="margin:0 auto 48px;">Six avantages décisifs pour moderniser la production statistique nationale.</p>
-    </div>
-    <div class="grid-3">
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">🏛️</div>
-        <h3 class="card-title">Souveraineté numérique</h3>
-        <p class="card-text">Mettre fin à la dépendance aux licences SPSS, SAS et Stata au profit d'un outil open source pérenne, libre et gratuit.</p>
+    <div class="part-split fade-in" style="border-color:rgba(255,255,255,0.10);">
+      <div class="part-col part-apporte" style="background:rgba(255,255,255,0.04);">
+        <div class="part-col-title" style="color:var(--light2);border-color:rgba(255,255,255,0.10);">🏛️ Votre INS apporte</div>
+        <div class="part-item" style="color:var(--light2);"><span>Hébergement du siège — adresse officielle Foundation</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Infrastructure physique — locaux, équipements</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Légitimité institutionnelle régionale</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Point focal permanent désigné</span></div>
       </div>
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">🔁</div>
-        <h3 class="card-title">Reproductibilité</h3>
-        <p class="card-text">Chaque analyse devient un script documenté, auditable et réutilisable d'une année sur l'autre, sans perte de savoir-faire.</p>
-      </div>
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">⚡</div>
-        <h3 class="card-title">Productivité</h3>
-        <p class="card-text">Réduction estimée à <strong>60–70%</strong> du temps de traitement des enquêtes ménages, recensements et données administratives.</p>
-      </div>
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">🌍</div>
-        <h3 class="card-title">Harmonisation régionale</h3>
-        <p class="card-text">Base méthodologique commune pour les comparaisons inter-INS au sein de l'UEMOA, de la CEDEAO et de la CEMAC.</p>
-      </div>
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">🎓</div>
-        <h3 class="card-title">Formation intégrée</h3>
-        <p class="card-text">Vignettes pédagogiques, exemples concrets sur données réelles, programme de certification à 3 niveaux.</p>
-      </div>
-      <div class="card fade-in" role="article">
-        <div class="card-icon" aria-hidden="true">📦</div>
-        <h3 class="card-title">Open source complet</h3>
-        <p class="card-text">Licence GPL-3 · CRAN officiel · GitHub · Documentation française · Fonctionnement hors ligne intégral.</p>
+      <div class="part-col part-recoit" style="background:rgba(29,78,137,0.25);">
+        <div class="part-col-title" style="color:var(--light2);border-color:rgba(255,255,255,0.10);">✓ Votre INS reçoit</div>
+        <div class="part-item" style="color:var(--light2);"><span>Formation gratuite pour vos équipes (10 jours)</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Module sur mesure pour vos enquêtes nationales</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Accès prioritaire aux financements bailleurs</span></div>
+        <div class="part-item" style="color:var(--light2);"><span>Rayonnement continental · Zéro coût logiciel</span></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ── Pipeline ──────────────────────────────────────────────── -->
-<section style="background:var(--white);" aria-labelledby="pipeline-title">
-  <div class="container">
-    <p class="section-label text-center">Architecture technique</p>
-    <h2 id="pipeline-title" class="section-title text-center fade-in">Pipeline statistique complet — 5 modules intégrés</h2>
-    <p class="section-sub text-center fade-in" style="margin:0 auto 40px;">Des données brutes aux livrables publiables et diffusables, en un seul écosystème cohérent.</p>
-    <div class="pipeline" role="list">
-      <div class="pipeline-step fade-in" role="listitem">
-        <div class="pipeline-num">MODULE 01</div>
-        <div class="pipeline-title">Collecte</div>
-        <div class="pipeline-fns">import_excel()<br>import_kobo()<br>import_cspro()<br>import_stata()</div>
-      </div>
-      <div class="pipeline-step fade-in" role="listitem">
-        <div class="pipeline-num">MODULE 02</div>
-        <div class="pipeline-title">Traitement</div>
-        <div class="pipeline-fns">check_na()<br>imputer_valeurs()<br>harmoniser_regions()<br>appliquer_ponderations()</div>
-      </div>
-      <div class="pipeline-step fade-in" role="listitem">
-        <div class="pipeline-num">MODULE 03</div>
-        <div class="pipeline-title">Analyse</div>
-        <div class="pipeline-fns">calcul_idh()<br>calcul_ipm()<br>decomposer_inegalite()<br>tab_croisee()</div>
-      </div>
-      <div class="pipeline-step fade-in" role="listitem">
-        <div class="pipeline-num">MODULE 04</div>
-        <div class="pipeline-title">Visualisation</div>
-        <div class="pipeline-fns">pyramide_ages()<br>carte_thematique()<br>theme_ins()<br>generer_rapport()</div>
-      </div>
-      <div class="pipeline-step fade-in" role="listitem">
-        <div class="pipeline-num">MODULE 05</div>
-        <div class="pipeline-title">Diffusion</div>
-        <div class="pipeline-fns">anonymiser_donnees()<br>generer_metadonnees_ddi()<br>exporter_sdmx()</div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:24px;">
-      <a href="package.html" class="btn btn-primary btn-sm">Voir toutes les fonctions</a>
-    </p>
-  </div>
-</section>
-
-<!-- ── CRAN Stats Chart ──────────────────────────────────────── -->
-<section aria-labelledby="stats-title">
-  <div class="container">
-    <div class="text-center">
-      <p class="section-label">Données live</p>
-      <h2 id="stats-title" class="section-title fade-in"><span class="cran-title-count">...</span> en un mois</h2>
-      <p class="section-sub fade-in" style="margin:0 auto 32px;"><span id="cran-chart-subtitle">Chargement...</span> · Sans budget promotionnel · Source : RStudio CRAN mirror</p>
-    </div>
-    <div class="chart-container fade-in" id="cran-chart" aria-label="Graphique des téléchargements CRAN" role="img">
-      <svg viewBox="0 0 700 200" class="bar-chart-svg"><text x="350" y="110" text-anchor="middle" font-family="Arial" font-size="14" fill="#718096">Chargement des statistiques...</text></svg>
-    </div>
-    <div class="stats-grid" style="margin-top:40px;">
-      <div class="stat-card fade-in">
-        <div class="stat-num cran-total-val">375</div>
-        <div class="stat-label">Téléchargements CRAN totaux</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-num">40</div>
-        <div class="stat-label">Fonctions documentées</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-num">237</div>
-        <div class="stat-label">Tests unitaires</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-num" id="gh-stars">—</div>
-        <div class="stat-label">GitHub stars</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Actualités ────────────────────────────────────────────── -->
-<section style="background:var(--white);" aria-labelledby="news-title">
-  <div class="container">
-    <p class="section-label">Dernières actualités</p>
-    <h2 id="news-title" class="section-title fade-in">Suivre l'évolution de statAfrikR</h2>
-    <div class="grid-3" style="margin-top:32px;">
-      <article class="card fade-in">
-        <span class="badge badge-green">Disponible</span>
-        <h3 class="card-title" style="margin-top:12px;">statAfrikR v0.1.0 sur le CRAN</h3>
-        <p class="card-text">Publication officielle le 3 avril 2026. 40 fonctions, 5 modules, 237 tests unitaires. Premier package R open source dédié aux INS africains.</p>
-        <a href="https://cran.r-project.org/web/packages/statAfrikR/news/news.html" target="_blank" rel="noopener" style="font-size:0.85rem;margin-top:12px;display:inline-block;">Voir le changelog →</a>
-      </article>
-      <article class="card fade-in">
-        <span class="badge badge-amber">En cours</span>
-        <h3 class="card-title" style="margin-top:12px;">Création de la statAfrikR Foundation</h3>
-        <p class="card-text">Fonds de dotation en cours de constitution (loi n°2008-776). Gouvernance inspirée de la DuckDB Foundation. Siège dans le premier INS partenaire fondateur.</p>
-        <a href="foundation.html" style="font-size:0.85rem;margin-top:12px;display:inline-block;">En savoir plus →</a>
-      </article>
-      <article class="card fade-in">
-        <span class="badge badge-blue">T3 2026</span>
-        <h3 class="card-title" style="margin-top:12px;">v0.2.0 en développement</h3>
-        <p class="card-text">Prochaine version : Module FGT (pauvreté), Cartographie sf, Tableaux Word/Excel/PDF automatiques, Nouveaux indicateurs ODD. Interface bilingue FR/EN.</p>
-        <a href="roadmap.html" style="font-size:0.85rem;margin-top:12px;display:inline-block;">Voir la roadmap →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ── Partenariat CTA ───────────────────────────────────────── -->
-<section style="background:var(--h-night);padding:80px 0;" aria-labelledby="partner-cta">
-  <div class="container text-center">
-    <p class="section-label" style="color:var(--amber);">Opportunité unique</p>
-    <h2 id="partner-cta" style="color:var(--white);margin-bottom:16px;" class="fade-in">Le siège de la Foundation dans votre INS</h2>
-    <p style="color:rgba(255,255,255,0.6);max-width:56ch;margin:0 auto 32px;" class="fade-in">
-      Le premier Institut National de la Statistique qui signe le protocole de partenariat devient
-      l'Institution Fondatrice officielle de la statAfrikR Foundation — une distinction qui n'appartiendra
-      qu'à un seul INS sur le continent africain.
-    </p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;" class="fade-in">
+    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:40px;" class="fade-in">
       <a href="partenariat.html" class="btn btn-primary">Devenir partenaire fondateur</a>
-      <a href="contact.html" class="btn btn-outline-light">Contacter Dikers Amoko</a>
+      <a href="contact.html"     class="btn btn-outline-light">Contacter Dikers Amoko</a>
     </div>
   </div>
 </section>
 
-<!-- ── Références ────────────────────────────────────────────── -->
-<section aria-labelledby="refs-title">
-  <div class="container">
-    <p class="section-label text-center">Références et ressources</p>
-    <h2 id="refs-title" class="section-title text-center fade-in">Toutes les ressources statAfrikR</h2>
-    <div class="grid-4" style="margin-top:32px;">
-      <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener" class="card" style="text-align:center;text-decoration:none;">
-        <div style="font-size:2rem;margin-bottom:8px;">📦</div>
-        <div class="card-title">CRAN officiel</div>
-        <div class="card-text" style="font-size:0.8rem;">Package & documentation</div>
-      </a>
-      <a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener" class="card" style="text-align:center;text-decoration:none;">
-        <div style="font-size:2rem;margin-bottom:8px;">📖</div>
-        <div class="card-title">Site pkgdown</div>
-        <div class="card-text" style="font-size:0.8rem;">Reference complète</div>
-      </a>
-      <a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener" class="card" style="text-align:center;text-decoration:none;">
-        <div style="font-size:2rem;margin-bottom:8px;">⚙️</div>
-        <div class="card-title">GitHub</div>
-        <div class="card-text" style="font-size:0.8rem;">Code source ouvert</div>
-      </a>
-      <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener" class="card" style="text-align:center;text-decoration:none;">
-        <div style="font-size:2rem;margin-bottom:8px;">💬</div>
-        <div class="card-title">Discord</div>
-        <div class="card-text" style="font-size:0.8rem;">Communauté active</div>
-      </a>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ── Footer ────────────────────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════ -->
 <footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="text-decoration:none;">
+        <a href="#hero" class="nav-logo" style="text-decoration:none;">
           <div class="nav-logo-text">
             <span class="nav-logo-name">statAfrikR</span>
             <span class="nav-logo-sub">Foundation</span>
           </div>
         </a>
         <p>Fondation panafricaine open source pour la statistique publique africaine. Fonds de dotation en cours de constitution · Loi n°2008-776 du 4 août 2008.</p>
-        <p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p>
+        <p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--h-gold);">diamoko@gmail.com</a></p>
       </div>
       <div class="footer-col">
-        <h4>Fondation</h4>
-        <a href="foundation.html">Vision & Mission</a>
-        <a href="gouvernance.html">Gouvernance</a>
-        <a href="roadmap.html">Feuille de route</a>
+        <h4>Sur cette page</h4>
+        <a href="#fondation">Fondation</a>
+        <a href="#gouvernance">Gouvernance</a>
+        <a href="#package">Package</a>
+        <a href="#formation">Formation</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#communaute">Communauté</a>
+        <a href="#don">Faire un don</a>
+        <a href="#partenariat">Devenir partenaire</a>
+      </div>
+      <div class="footer-col">
+        <h4>Pages détaillées</h4>
+        <a href="foundation.html">Fondation complète</a>
+        <a href="gouvernance.html">Gouvernance complète</a>
+        <a href="package.html">40 fonctions</a>
+        <a href="formation.html">Programme formation</a>
+        <a href="roadmap.html">Roadmap 2026–2028</a>
         <a href="financement.html">Modèle économique</a>
-        <a href="partenariat.html">Devenir partenaire</a>
-      </div>
-      <div class="footer-col">
-        <h4>Le package</h4>
-        <a href="package.html">Architecture</a>
-        <a href="formation.html">Formation 10 jours</a>
-        <a href="communaute.html">Communauté</a>
-        <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a>
-        <a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a>
       </div>
       <div class="footer-col">
         <h4>Ressources</h4>
-        <a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a>
-        <a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a>
+        <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a>
+        <a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a>
         <a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a>
         <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a>
         <a href="contact.html">Contact</a>
@@ -354,36 +842,127 @@ donnees &lt;- <span class="code-fn">import_excel</span>(<span class="code-str">"
       <div class="footer-links">
         <a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a>
         <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a>
+        <a href="don.html">Faire un don</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
   </div>
 </footer>
 
+</main>
+
 <div class="org-tooltip" role="tooltip" aria-live="polite"></div>
-<script src="assets/js/main.js"></script>
+
 <script>
-// Parallax souris sur les hex stickers
-(function(){
-  const wall = document.getElementById('hex-wall');
-  const svg  = document.getElementById('hex-svg');
-  if (!wall || !svg) return;
+/* ── Scroll-spy : met en valeur le lien nav actif ─────────────── */
+(function initScrollSpy() {
+  const sections = document.querySelectorAll('.page-section, header.hero');
+  const navLinks  = document.querySelectorAll('.nav-links a[data-section]');
+  const options   = { rootMargin: '-60px 0px -50% 0px', threshold: 0 };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach(a => {
+        const sec = a.getAttribute('data-section');
+        const match = id === sec || (id === 'hero' && sec === null);
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    });
+  }, options);
+
+  sections.forEach(s => observer.observe(s));
+  document.querySelector('header.hero') && observer.observe(document.querySelector('header.hero'));
+})();
+
+/* ── Package tabs ─────────────────────────────────────────────── */
+(function initPkgTabs() {
+  const MODULES = [
+    ['import_excel()', 'import_kobo()', 'import_cspro()', 'import_stata()', 'import_spss()', 'import_odk()', 'import_sas()', 'valider_dictionnaire()'],
+    ['check_na()', 'check_types()', 'valider_qualite_donnees()', 'nettoyer_libelles()', 'imputer_valeurs()', 'harmoniser_regions()', 'standardiser_ages()', 'appliquer_ponderations()'],
+    ['stat_descr()', 'tab_croisee()', 'analyse_regression()', 'decomposer_inegalite()', 'calcul_idh()', 'calcul_ipm()', 'tracer_flux_traitement()'],
+    ['pyramide_ages()', 'graphique_barres()', 'carte_thematique()', 'theme_ins()', 'palette_ins()', 'generer_rapport()', 'exporter_graphique()'],
+    ['anonymiser_donnees()', 'generer_metadonnees_ddi()', 'exporter_sdmx()', 'compresser_package_diffusion()'],
+  ];
+  const panel = document.getElementById('pkg-panel');
+  const tabs  = document.querySelectorAll('#pkg-tablist .pkg-tab');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const idx = parseInt(tab.getAttribute('data-tab'));
+      panel.innerHTML = MODULES[idx].map(f =>
+        `<span class="pkg-fn">${f}</span>`
+      ).join('');
+    });
+  });
+})();
+
+/* ── Don selector ─────────────────────────────────────────────── */
+const DON_IMPACTS = {
+  10:  '10 € = 1 vignette pédagogique développée pour un INS africain.',
+  25:  '25 € = 1 heure de développement sur statAfrikR ou ses packages.',
+  50:  '50 € = 1 statisticien africain certifié niveau 1 statAfrikR.',
+  150: '150 € = 1 session de formation pour une équipe de votre INS.',
+};
+function selDon(val, btn) {
+  document.querySelectorAll('.don-chip').forEach(c => c.classList.remove('sel'));
+  btn.classList.add('sel');
+  const impact = document.getElementById('don-impact');
+  if (impact) impact.innerHTML = `<strong>${val} €</strong> = ${DON_IMPACTS[val].split('= ')[1]}`;
+}
+
+/* ── Parallax souris sur les hex stickers ─────────────────────── */
+(function() {
+  const svg = document.getElementById('hex-svg');
+  if (!svg) return;
   let tX=0, tY=0, cX=0, cY=0;
   document.addEventListener('mousemove', e => {
-    const rx = (e.clientX / window.innerWidth  - 0.5) * 18;
-    const ry = (e.clientY / window.innerHeight - 0.5) * 12;
-    tX = rx; tY = ry;
+    tX = (e.clientX/window.innerWidth  - 0.5) * 18;
+    tY = (e.clientY/window.innerHeight - 0.5) * 12;
   });
-  function animate() {
-    cX += (tX - cX) * 0.06;
-    cY += (tY - cY) * 0.06;
-    svg.style.transform = `translate(${cX}px, ${cY}px)`;
-    requestAnimationFrame(animate);
+  function tick() {
+    cX += (tX-cX)*0.06; cY += (tY-cY)*0.06;
+    svg.style.transform = `translate(${cX}px,${cY}px)`;
+    requestAnimationFrame(tick);
   }
-  animate();
+  tick();
 })();
+
+/* ── Bouton copier code ───────────────────────────────────────── */
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    navigator.clipboard.writeText(pre.innerText).then(() => {
+      btn.textContent = '✓ Copié'; btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+    });
+  });
+});
+
+/* ── Navigation toggle mobile ─────────────────────────────────── */
+const toggle = document.querySelector('.nav-toggle');
+const links  = document.querySelector('.nav-links');
+if (toggle && links) {
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav')) links.classList.remove('open');
+  });
+}
+
+/* ── Fade-in observer ─────────────────────────────────────────── */
+new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 }).observe && document.querySelectorAll('.fade-in').forEach(el => {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 }).observe(el);
+});
 </script>
-<script src="assets/js/i18n.js"></script>
+
 <script src="assets/js/stats.js"></script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>
