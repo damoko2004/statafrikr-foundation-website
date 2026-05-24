@@ -58,7 +58,7 @@ section:nth-child(even){background:var(--white);}
 .section-sub{color:var(--mist);margin-bottom:48px;max-width:60ch;}
 
 /* ── Navigation ─────────────────────────────────────────── */
-.nav{position:sticky;top:0;z-index:1000;background:rgba(27,43,59,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:var(--nav-h);display:flex;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.3);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(26,51,72,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);height:var(--nav-h);display:flex;align-items:center;box-shadow:0 2px 20px rgba(0,0,0,0.3);border-bottom:1px solid rgba(255,255,255,0.06);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--max-w);margin:0 auto;padding:0 28px;}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .nav-logo-text{display:flex;flex-direction:column;line-height:1.2;}
@@ -78,7 +78,7 @@ section:nth-child(even){background:var(--white);}
 
 /* ── HERO ───────────────────────────────────────────────── */
 .hero{
-  background: var(--ink);
+  background: linear-gradient(145deg, #1A3348 0%, #1C3D2E 60%, #1A3040 100%);
   min-height: 92vh;
   display: flex;
   align-items: stretch;
@@ -88,9 +88,10 @@ section:nth-child(even){background:var(--white);}
 .hero::before{
   content:'';position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 70% 80% at 15% 50%, rgba(29,79,58,0.45) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 40% at 5% 90%,  rgba(156,106,16,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 80% 20%, rgba(29,79,58,0.20) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 90% at 10% 50%, rgba(29,79,58,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 5% 90%,  rgba(156,106,16,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 75% 15%, rgba(29,79,58,0.30) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 90% 80%, rgba(29,64,58,0.25) 0%, transparent 50%);
   pointer-events:none;
 }
 .hero-inner{
@@ -277,9 +278,23 @@ tbody tr:hover{background:var(--sage);}
 .search-input:focus{border-color:var(--pine);box-shadow:0 0 0 3px rgba(29,79,58,0.1);}
 
 /* ── Page Hero ──────────────────────────────────────────── */
-.page-hero{background:var(--ink);padding:90px 0 72px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(29,79,58,0.30) 0%,transparent 65%),linear-gradient(135deg,rgba(29,79,58,0.12) 0%,transparent 60%);pointer-events:none;}
-.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--pine),var(--amber),var(--pine));opacity:0.6;}
+.page-hero{
+  background: linear-gradient(145deg, #1A3348 0%, #1C3D2E 55%, #1A3040 100%);
+  padding:90px 0 72px;position:relative;overflow:hidden;
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 90% at 85% 50%, rgba(29,79,58,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(29,79,58,0.30) 0%, transparent 55%),
+    linear-gradient(135deg, rgba(29,79,58,0.18) 0%, transparent 50%);
+  pointer-events:none;
+}
+.page-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(to right,var(--pine),var(--amber),var(--pine));
+  opacity:0.8;
+}
 .page-hero-inner{position:relative;z-index:1;max-width:var(--max-w);margin:0 auto;padding:0 28px;}
 .page-hero h1{color:var(--white);margin-bottom:14px;}
 .page-hero .lead{color:rgba(255,255,255,0.60);}
@@ -343,7 +358,7 @@ tbody tr:hover{background:var(--sage);}
 .fade-in.visible{opacity:1;transform:none;}
 
 /* ── Footer ─────────────────────────────────────────────── */
-.footer{background:#0E1922;color:rgba(255,255,255,0.68);padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.06);}
+.footer{background:#121F2A;color:rgba(255,255,255,0.68);padding:64px 0 32px;border-top:1px solid rgba(255,255,255,0.06);}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
 .footer-brand p{font-size:0.88rem;color:rgba(255,255,255,0.48);max-width:34ch;line-height:1.65;margin-top:14px;}
 .footer-col h4{font-family:var(--font-body);font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.40);margin-bottom:18px;}
