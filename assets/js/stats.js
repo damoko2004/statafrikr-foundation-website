@@ -70,14 +70,37 @@ async function fetchGitHub() {
 
 /* ── Mise à jour des compteurs ───────────────────────────────── */
 function updateCounters(total, daily) {
-  // Compteur principal hero
+  // Compteur principal hero — animation depuis la valeur actuelle
   const el = document.getElementById('cran-total');
-  if (el) { el.setAttribute('data-count', total); el.textContent = total.toLocaleString('fr-FR'); }
+  if (el) {
+    el.setAttribute('data-count', total);
+    // Animer depuis la valeur affichée vers le total réel
+    const from = parseInt(el.textContent.replace(/\s/g,'')) || 0;
+    const dur = 1400;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(from + (total - from) * ease).toLocaleString('fr-FR');
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = total.toLocaleString('fr-FR');
+    };
+    requestAnimationFrame(tick);
+  }
 
   // Tous les éléments .cran-total-val
   document.querySelectorAll('.cran-total-val').forEach(e => {
     e.textContent = total.toLocaleString('fr-FR');
   });
+
+  // Titre dynamique "X téléchargements en un mois"
+  document.querySelectorAll('.cran-title-count').forEach(e => {
+    e.textContent = total.toLocaleString('fr-FR') + ' téléchargements';
+  });
+
+  // Sous-titre du graphique
+  const chartSub = document.getElementById('cran-chart-subtitle');
+  if (chartSub) chartSub.textContent = total.toLocaleString('fr-FR') + ' téléchargements depuis le 3 avril 2026';
 
   // Pic journalier
   if (daily.length) {
