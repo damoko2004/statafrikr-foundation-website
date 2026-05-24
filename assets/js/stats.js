@@ -73,15 +73,13 @@ function updateCounters(total, daily) {
   // Compteur principal hero — animation depuis la valeur actuelle
   const el = document.getElementById('cran-total');
   if (el) {
-    el.setAttribute('data-count', total);
-    // Animer depuis la valeur affichée vers le total réel
-    const from = parseInt(el.textContent.replace(/\s/g,'')) || 0;
-    const dur = 1400;
+    // Animation directe — indépendante de l'IntersectionObserver
+    const dur = 1600;
     const start = performance.now();
     const tick = (now) => {
       const p = Math.min((now - start) / dur, 1);
       const ease = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(from + (total - from) * ease).toLocaleString('fr-FR');
+      el.textContent = Math.round(ease * total).toLocaleString('fr-FR');
       if (p < 1) requestAnimationFrame(tick);
       else el.textContent = total.toLocaleString('fr-FR');
     };
