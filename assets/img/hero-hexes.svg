@@ -1,217 +1,225 @@
-<svg viewBox="0 0 697 515" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 717 702" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
   <style>
-    .hex-sticker {
-      animation: hexFloat linear infinite;
+    .hs {
+      animation: hFloat var(--t) ease-in-out var(--d) infinite;
       transform-origin: center;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45));
+      transition: filter 0.3s;
     }
-    @keyframes hexFloat {
-      0%   { transform: translateY(0px) rotate(0deg); }
-      25%  { transform: translateY(-8px) rotate(0.5deg); }
-      50%  { transform: translateY(-14px) rotate(0deg); }
-      75%  { transform: translateY(-6px) rotate(-0.5deg); }
-      100% { transform: translateY(0px) rotate(0deg); }
+    .hs:hover { filter: drop-shadow(0 8px 28px rgba(29,79,58,0.7)) brightness(1.15); cursor:default; }
+    @keyframes hFloat {
+      0%   { transform: translateY(0)      rotate(0deg)      scale(1); }
+      20%  { transform: translateY(calc(var(--a)*-0.6)) rotate(calc(var(--r)*0.5))  scale(1.015); }
+      50%  { transform: translateY(calc(var(--a)*-1))   rotate(0deg)               scale(1.02); }
+      80%  { transform: translateY(calc(var(--a)*-0.6)) rotate(calc(var(--r)*-0.5)) scale(1.015); }
+      100% { transform: translateY(0)      rotate(0deg)      scale(1); }
     }
   </style>
   
-  <g class="hex-sticker" style="animation-delay:0.0s;animation-duration:3.5s">
-    <polygon points="126.9,102.0 68.0,136.0 9.1,102.0 9.1,34.0 68.0,0.0 126.9,34.0"   fill="#2A6B50"/>
-    <polygon points="122.6,99.5 68.0,131.0 13.4,99.5 13.4,36.5 68.0,5.0 122.6,36.5" fill="#1D4F3A"/>
-    <text x="68" y="64" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">statAfrikR</text>
-    <text x="68" y="78" text-anchor="middle"
-          font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">v0.1.0</text>
+  <g class="hs" style="--d:0.00s;--t:3.8s;--a:10px;--r:0.8deg" transform="translate(0,0)">
+    <polygon points="208.2,136.0 132.0,180.0 55.8,136.0 55.8,48.0 132.0,4.0 208.2,48.0"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="203.9,133.5 132.0,175.0 60.1,133.5 60.1,50.5 132.0,9.0 203.9,50.5" fill="#1D4F3A"/>
+    <text x="132" y="87" text-anchor="middle"
+          font-family="Georgia,serif" font-size="14" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">statAfrikR</text>
+    <text x="132" y="105" text-anchor="middle"
+          font-family="'Courier New',monospace" font-size="9"
+          fill="rgba(255,255,255,0.65)">v0.1.0</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:0.3s;animation-duration:4.2s">
-    <polygon points="245.9,102.0 187.0,136.0 128.1,102.0 128.1,34.0 187.0,0.0 245.9,34.0"   fill="#1D4F3A"/>
-    <polygon points="241.6,99.5 187.0,131.0 132.4,99.5 132.4,36.5 187.0,5.0 241.6,36.5" fill="#163D2C"/>
-    <text x="187" y="64" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">statAfrikR</text>
-    <text x="187" y="78" text-anchor="middle"
+  <g class="hs" style="--d:0.25s;--t:4.4s;--a:15px;--r:1.1deg" transform="translate(0,0)">
+    <polygon points="326.0,130.0 260.2,168.0 194.3,130.0 194.3,54.0 260.2,16.0 326.0,54.0"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="321.6,127.5 260.2,163.0 198.7,127.5 198.7,56.5 260.2,21.0 321.6,56.5" fill="#163D2C"/>
+    <text x="260" y="88" text-anchor="middle"
+          font-family="Georgia,serif" font-size="12" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">statAfrikR</text>
+    <text x="260" y="103" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">CRAN</text>
+          fill="rgba(255,255,255,0.65)">CRAN</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:0.6s;animation-duration:4.9s">
-    <polygon points="364.9,102.0 306.0,136.0 247.1,102.0 247.1,34.0 306.0,0.0 364.9,34.0"   fill="#243C52"/>
-    <polygon points="360.6,99.5 306.0,131.0 251.4,99.5 251.4,36.5 306.0,5.0 360.6,36.5" fill="#1B3040"/>
-    <text x="306" y="64" text-anchor="middle"
+  <g class="hs" style="--d:0.50s;--t:5.0s;--a:20px;--r:1.4deg" transform="translate(0,0)">
+    <polygon points="445.5,125.0 388.3,158.0 331.2,125.0 331.2,59.0 388.3,26.0 445.5,59.0"    fill="#2D5070" opacity="0.95"/>
+    <polygon points="441.1,122.5 388.3,153.0 335.5,122.5 335.5,61.5 388.3,31.0 441.1,61.5" fill="#1B3040"/>
+    <text x="388" y="88" text-anchor="middle"
           font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Collecte</text>
-    <text x="306" y="78" text-anchor="middle"
+          fill="rgba(255,255,255,0.95)">Collecte</text>
+    <text x="388" y="103" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">import_*()</text>
+          fill="rgba(255,255,255,0.65)">import_*()</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:0.9s;animation-duration:5.6s">
-    <polygon points="483.9,102.0 425.0,136.0 366.1,102.0 366.1,34.0 425.0,0.0 483.9,34.0"   fill="#2A6B50"/>
-    <polygon points="479.6,99.5 425.0,131.0 370.4,99.5 370.4,36.5 425.0,5.0 479.6,36.5" fill="#1D4F3A"/>
-    <text x="425" y="64" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Traitement</text>
-    <text x="425" y="78" text-anchor="middle"
+  <g class="hs" style="--d:0.75s;--t:5.6s;--a:10px;--r:1.7deg" transform="translate(0,0)">
+    <polygon points="571.9,124.0 516.5,156.0 461.1,124.0 461.1,60.0 516.5,28.0 571.9,60.0"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="567.6,121.5 516.5,151.0 465.4,121.5 465.4,62.5 516.5,33.0 567.6,62.5" fill="#1D4F3A"/>
+    <text x="516" y="88" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Traitement</text>
+    <text x="516" y="103" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">check_na()</text>
+          fill="rgba(255,255,255,0.65)">check_na()</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:1.2s;animation-duration:3.5s">
-    <polygon points="602.9,102.0 544.0,136.0 485.1,102.0 485.1,34.0 544.0,0.0 602.9,34.0"   fill="#1D4F3A"/>
-    <polygon points="598.6,99.5 544.0,131.0 489.4,99.5 489.4,36.5 544.0,5.0 598.6,36.5" fill="#163D2C"/>
-    <text x="544" y="64" text-anchor="middle"
+  <g class="hs" style="--d:1.00s;--t:6.2s;--a:15px;--r:0.8deg" transform="translate(0,0)">
+    <polygon points="258.9,238.6 198.2,273.6 137.6,238.6 137.6,168.6 198.2,133.6 258.9,168.6"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="254.5,236.1 198.2,268.6 141.9,236.1 141.9,171.1 198.2,138.6 254.5,171.1" fill="#163D2C"/>
+    <text x="198" y="200" text-anchor="middle"
           font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Analyse</text>
-    <text x="544" y="78" text-anchor="middle"
+          fill="rgba(255,255,255,0.95)">Analyse</text>
+    <text x="198" y="215" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">IDH · IPM</text>
+          fill="rgba(255,255,255,0.65)">IDH · IPM</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:1.5s;animation-duration:4.2s">
-    <polygon points="188.1,205.4 129.2,239.4 70.3,205.4 70.3,137.4 129.2,103.4 188.1,137.4"   fill="#243C52"/>
-    <polygon points="183.8,202.9 129.2,234.4 74.6,202.9 74.6,139.9 129.2,108.4 183.8,139.9" fill="#1B3040"/>
-    <text x="129" y="167" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Visualisation</text>
-    <text x="129" y="182" text-anchor="middle"
+  <g class="hs" style="--d:1.25s;--t:3.8s;--a:20px;--r:1.1deg" transform="translate(0,0)">
+    <polygon points="380.1,234.6 326.4,265.6 272.7,234.6 272.7,172.6 326.4,141.6 380.1,172.6"    fill="#2D5070" opacity="0.95"/>
+    <polygon points="375.8,232.1 326.4,260.6 277.0,232.1 277.0,175.1 326.4,146.6 375.8,175.1" fill="#1B3040"/>
+    <text x="326" y="200" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Visualisation</text>
+    <text x="326" y="215" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">theme_ins()</text>
+          fill="rgba(255,255,255,0.65)">theme_ins()</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:1.8s;animation-duration:4.9s">
-    <polygon points="307.1,205.4 248.2,239.4 189.3,205.4 189.3,137.4 248.2,103.4 307.1,137.4"   fill="#2A6B50"/>
-    <polygon points="302.8,202.9 248.2,234.4 193.6,202.9 193.6,139.9 248.2,108.4 302.8,139.9" fill="#1D4F3A"/>
-    <text x="248" y="167" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Diffusion</text>
-    <text x="248" y="182" text-anchor="middle"
+  <g class="hs" style="--d:1.50s;--t:4.4s;--a:10px;--r:1.4deg" transform="translate(0,0)">
+    <polygon points="510.0,235.6 454.6,267.6 399.1,235.6 399.1,171.6 454.6,139.6 510.0,171.6"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="505.7,233.1 454.6,262.6 403.5,233.1 403.5,174.1 454.6,144.6 505.7,174.1" fill="#1D4F3A"/>
+    <text x="455" y="200" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Diffusion</text>
+    <text x="455" y="215" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">SDMX · DDI</text>
+          fill="rgba(255,255,255,0.65)">SDMX · DDI</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:2.1s;animation-duration:5.6s">
-    <polygon points="426.1,205.4 367.2,239.4 308.3,205.4 308.3,137.4 367.2,103.4 426.1,137.4"   fill="#B07A18"/>
-    <polygon points="421.8,202.9 367.2,234.4 312.6,202.9 312.6,139.9 367.2,108.4 421.8,139.9" fill="#9C6A10"/>
-    <text x="367" y="167" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Pauvreté</text>
-    <text x="367" y="182" text-anchor="middle"
+  <g class="hs" style="--d:1.75s;--t:5.0s;--a:15px;--r:1.7deg" transform="translate(0,0)">
+    <polygon points="645.1,239.6 582.7,275.6 520.4,239.6 520.4,167.6 582.7,131.6 645.1,167.6"    fill="#C4881A" opacity="0.95"/>
+    <polygon points="640.7,237.1 582.7,270.6 524.7,237.1 524.7,170.1 582.7,136.6 640.7,170.1" fill="#9C6A10"/>
+    <text x="583" y="199" text-anchor="middle"
+          font-family="Georgia,serif" font-size="12" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Pauvreté</text>
+    <text x="583" y="215" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">FGT · Gini</text>
+          fill="rgba(255,255,255,0.65)">FGT · Gini</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:2.4s;animation-duration:3.5s">
-    <polygon points="545.1,205.4 486.2,239.4 427.3,205.4 427.3,137.4 486.2,103.4 545.1,137.4"   fill="#1D4F3A"/>
-    <polygon points="540.8,202.9 486.2,234.4 431.6,202.9 431.6,139.9 486.2,108.4 540.8,139.9" fill="#163D2C"/>
-    <text x="486" y="167" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Cartographie</text>
-    <text x="486" y="182" text-anchor="middle"
+  <g class="hs" style="--d:2.00s;--t:5.6s;--a:20px;--r:0.8deg" transform="translate(0,0)">
+    <polygon points="185.7,346.2 132.0,377.2 78.3,346.2 78.3,284.2 132.0,253.2 185.7,284.2"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="181.4,343.7 132.0,372.2 82.6,343.7 82.6,286.7 132.0,258.2 181.4,286.7" fill="#163D2C"/>
+    <text x="132" y="312" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">statAfrik</text>
+    <text x="132" y="326" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">statAfrik
-Maps</text>
+          fill="rgba(255,255,255,0.65)">Maps</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:2.7s;animation-duration:4.2s">
-    <polygon points="664.1,205.4 605.2,239.4 546.3,205.4 546.3,137.4 605.2,103.4 664.1,137.4"   fill="#243C52"/>
-    <polygon points="659.8,202.9 605.2,234.4 550.6,202.9 550.6,139.9 605.2,108.4 659.8,139.9" fill="#1B3040"/>
-    <text x="605" y="167" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">CEDEAO</text>
-    <text x="605" y="182" text-anchor="middle"
+  <g class="hs" style="--d:2.25s;--t:6.2s;--a:10px;--r:1.1deg" transform="translate(0,0)">
+    <polygon points="310.4,344.2 260.2,373.2 209.9,344.2 209.9,286.2 260.2,257.2 310.4,286.2"    fill="#2D5070" opacity="0.95"/>
+    <polygon points="306.1,341.7 260.2,368.2 214.3,341.7 214.3,288.7 260.2,262.2 306.1,288.7" fill="#1B3040"/>
+    <text x="260" y="312" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">CEDEAO</text>
+    <text x="260" y="326" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">UEMOA</text>
+          fill="rgba(255,255,255,0.65)">UEMOA</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:3.0s;animation-duration:4.9s">
-    <polygon points="126.9,308.7 68.0,342.7 9.1,308.7 9.1,240.7 68.0,206.7 126.9,240.7"   fill="#2A6B50"/>
-    <polygon points="122.6,306.2 68.0,337.7 13.4,306.2 13.4,243.2 68.0,211.7 122.6,243.2" fill="#1D4F3A"/>
-    <text x="68" y="270" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">CEMAC</text>
-    <text x="68" y="285" text-anchor="middle"
+  <g class="hs" style="--d:2.50s;--t:3.8s;--a:15px;--r:1.4deg" transform="translate(0,0)">
+    <polygon points="436.8,343.2 388.3,371.2 339.8,343.2 339.8,287.2 388.3,259.2 436.8,287.2"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="432.5,340.7 388.3,366.2 344.2,340.7 344.2,289.7 388.3,264.2 432.5,289.7" fill="#1D4F3A"/>
+    <text x="388" y="312" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">CEMAC</text>
+    <text x="388" y="326" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">COMESA</text>
+          fill="rgba(255,255,255,0.65)">COMESA</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:3.3s;animation-duration:5.6s">
-    <polygon points="245.9,308.7 187.0,342.7 128.1,308.7 128.1,240.7 187.0,206.7 245.9,240.7"   fill="#1D4F3A"/>
-    <polygon points="241.6,306.2 187.0,337.7 132.4,306.2 132.4,243.2 187.0,211.7 241.6,243.2" fill="#163D2C"/>
-    <text x="187" y="270" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Recensement</text>
-    <text x="187" y="285" text-anchor="middle"
+  <g class="hs" style="--d:2.75s;--t:4.4s;--a:20px;--r:1.7deg" transform="translate(0,0)">
+    <polygon points="568.4,345.2 516.5,375.2 464.5,345.2 464.5,285.2 516.5,255.2 568.4,285.2"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="564.1,342.7 516.5,370.2 468.8,342.7 468.8,287.7 516.5,260.2 564.1,287.7" fill="#163D2C"/>
+    <text x="516" y="312" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Recensement</text>
+    <text x="516" y="326" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">CSPro·ODK</text>
+          fill="rgba(255,255,255,0.65)">CSPro·ODK</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:3.6s;animation-duration:3.5s">
-    <polygon points="364.9,308.7 306.0,342.7 247.1,308.7 247.1,240.7 306.0,206.7 364.9,240.7"   fill="#B07A18"/>
-    <polygon points="360.6,306.2 306.0,337.7 251.4,306.2 251.4,243.2 306.0,211.7 360.6,243.2" fill="#9C6A10"/>
-    <text x="306" y="270" text-anchor="middle"
+  <g class="hs" style="--d:3.00s;--t:5.0s;--a:10px;--r:0.8deg" transform="translate(0,0)">
+    <polygon points="255.4,459.8 198.2,492.8 141.1,459.8 141.1,393.8 198.2,360.8 255.4,393.8"    fill="#C4881A" opacity="0.95"/>
+    <polygon points="251.1,457.3 198.2,487.8 145.4,457.3 145.4,396.3 198.2,365.8 251.1,396.3" fill="#9C6A10"/>
+    <text x="198" y="423" text-anchor="middle"
           font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">GPL-3</text>
-    <text x="306" y="285" text-anchor="middle"
+          fill="rgba(255,255,255,0.95)">GPL-3</text>
+    <text x="198" y="438" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">Open Source</text>
+          fill="rgba(255,255,255,0.65)">Open Source</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:3.9s;animation-duration:4.2s">
-    <polygon points="483.9,308.7 425.0,342.7 366.1,308.7 366.1,240.7 425.0,206.7 483.9,240.7"   fill="#243C52"/>
-    <polygon points="479.6,306.2 425.0,337.7 370.4,306.2 370.4,243.2 425.0,211.7 479.6,243.2" fill="#1B3040"/>
-    <text x="425" y="270" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Reproductible</text>
-    <text x="425" y="285" text-anchor="middle"
+  <g class="hs" style="--d:3.25s;--t:5.6s;--a:15px;--r:1.1deg" transform="translate(0,0)">
+    <polygon points="376.6,455.8 326.4,484.8 276.2,455.8 276.2,397.8 326.4,368.8 376.6,397.8"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="372.3,453.3 326.4,479.8 280.5,453.3 280.5,400.3 326.4,373.8 372.3,400.3" fill="#1D4F3A"/>
+    <text x="326" y="423" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Formation</text>
+    <text x="326" y="438" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">tidyverse</text>
+          fill="rgba(255,255,255,0.65)">10 jours</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:4.2s;animation-duration:4.9s">
-    <polygon points="602.9,308.7 544.0,342.7 485.1,308.7 485.1,240.7 544.0,206.7 602.9,240.7"   fill="#2A6B50"/>
-    <polygon points="598.6,306.2 544.0,337.7 489.4,306.2 489.4,243.2 544.0,211.7 598.6,243.2" fill="#1D4F3A"/>
-    <text x="544" y="270" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Formation</text>
-    <text x="544" y="285" text-anchor="middle"
+  <g class="hs" style="--d:3.50s;--t:6.2s;--a:20px;--r:1.4deg" transform="translate(0,0)">
+    <polygon points="501.3,453.8 454.6,480.8 407.8,453.8 407.8,399.8 454.6,372.8 501.3,399.8"    fill="#2D5070" opacity="0.95"/>
+    <polygon points="497.0,451.3 454.6,475.8 412.1,451.3 412.1,402.3 454.6,377.8 497.0,402.3" fill="#1B3040"/>
+    <text x="455" y="423" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Academy</text>
+    <text x="455" y="438" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">10 jours</text>
+          fill="rgba(255,255,255,0.65)">e-learning</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:4.5s;animation-duration:5.6s">
-    <polygon points="188.1,412.1 129.2,446.1 70.3,412.1 70.3,344.1 129.2,310.1 188.1,344.1"   fill="#1D4F3A"/>
-    <polygon points="183.8,409.6 129.2,441.1 74.6,409.6 74.6,346.6 129.2,315.1 183.8,346.6" fill="#163D2C"/>
-    <text x="129" y="374" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Academy</text>
-    <text x="129" y="388" text-anchor="middle"
+  <g class="hs" style="--d:3.75s;--t:3.8s;--a:10px;--r:1.7deg" transform="translate(0,0)">
+    <polygon points="631.2,454.8 582.7,482.8 534.2,454.8 534.2,398.8 582.7,370.8 631.2,398.8"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="626.9,452.3 582.7,477.8 538.6,452.3 538.6,401.3 582.7,375.8 626.9,401.3" fill="#163D2C"/>
+    <text x="583" y="423" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">RGPH·EDS</text>
+    <text x="583" y="438" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">e-learning</text>
+          fill="rgba(255,255,255,0.65)">MICS·EHCVM</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:4.8s;animation-duration:3.5s">
-    <polygon points="307.1,412.1 248.2,446.1 189.3,412.1 189.3,344.1 248.2,310.1 307.1,344.1"   fill="#243C52"/>
-    <polygon points="302.8,409.6 248.2,441.1 193.6,409.6 193.6,346.6 248.2,315.1 302.8,346.6" fill="#1B3040"/>
-    <text x="248" y="374" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">RGPH·EDS</text>
-    <text x="248" y="388" text-anchor="middle"
+  <g class="hs" style="--d:4.00s;--t:4.4s;--a:15px;--r:0.8deg" transform="translate(0,0)">
+    <polygon points="185.7,569.4 132.0,600.4 78.3,569.4 78.3,507.4 132.0,476.4 185.7,507.4"    fill="#C4881A" opacity="0.95"/>
+    <polygon points="181.4,566.9 132.0,595.4 82.6,566.9 82.6,509.9 132.0,481.4 181.4,509.9" fill="#9C6A10"/>
+    <text x="132" y="535" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">statAfrik</text>
+    <text x="132" y="550" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">MICS·EHCVM</text>
+          fill="rgba(255,255,255,0.65)">Survey</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:5.1s;animation-duration:4.2s">
-    <polygon points="426.1,412.1 367.2,446.1 308.3,412.1 308.3,344.1 367.2,310.1 426.1,344.1"   fill="#B07A18"/>
-    <polygon points="421.8,409.6 367.2,441.1 312.6,409.6 312.6,346.6 367.2,315.1 421.8,346.6" fill="#9C6A10"/>
-    <text x="367" y="374" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">statAfrik</text>
-    <text x="367" y="388" text-anchor="middle"
+  <g class="hs" style="--d:4.25s;--t:5.0s;--a:20px;--r:1.1deg" transform="translate(0,0)">
+    <polygon points="306.9,565.4 260.2,592.4 213.4,565.4 213.4,511.4 260.2,484.4 306.9,511.4"    fill="#3A8060" opacity="0.95"/>
+    <polygon points="302.6,562.9 260.2,587.4 217.7,562.9 217.7,513.9 260.2,489.4 302.6,513.9" fill="#1D4F3A"/>
+    <text x="260" y="535" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">Certif.</text>
+    <text x="260" y="550" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">Survey</text>
+          fill="rgba(255,255,255,0.65)">Niv. 1·2·3</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:5.4s;animation-duration:4.9s">
-    <polygon points="545.1,412.1 486.2,446.1 427.3,412.1 427.3,344.1 486.2,310.1 545.1,344.1"   fill="#2A6B50"/>
-    <polygon points="540.8,409.6 486.2,441.1 431.6,409.6 431.6,346.6 486.2,315.1 540.8,346.6" fill="#1D4F3A"/>
-    <text x="486" y="374" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">Certif.</text>
-    <text x="486" y="388" text-anchor="middle"
+  <g class="hs" style="--d:4.50s;--t:5.6s;--a:10px;--r:1.4deg" transform="translate(0,0)">
+    <polygon points="433.4,564.4 388.3,590.4 343.3,564.4 343.3,512.4 388.3,486.4 433.4,512.4"    fill="#2D5070" opacity="0.95"/>
+    <polygon points="429.0,561.9 388.3,585.4 347.6,561.9 347.6,514.9 388.3,491.4 429.0,514.9" fill="#1B3040"/>
+    <text x="388" y="535" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">R ≥ 4.2</text>
+    <text x="388" y="550" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">Niv. 1·2·3</text>
+          fill="rgba(255,255,255,0.65)">Offline</text>
   </g>
-  <g class="hex-sticker" style="animation-delay:5.7s;animation-duration:5.6s">
-    <polygon points="664.1,412.1 605.2,446.1 546.3,412.1 546.3,344.1 605.2,310.1 664.1,344.1"   fill="#1D4F3A"/>
-    <polygon points="659.8,409.6 605.2,441.1 550.6,409.6 550.6,346.6 605.2,315.1 659.8,346.6" fill="#163D2C"/>
-    <text x="605" y="374" text-anchor="middle"
-          font-family="Georgia,serif" font-size="11" font-weight="bold"
-          fill="rgba(255,255,255,0.92)">R ≥ 4.2</text>
-    <text x="605" y="388" text-anchor="middle"
+  <g class="hs" style="--d:4.75s;--t:6.2s;--a:15px;--r:1.7deg" transform="translate(0,0)">
+    <polygon points="559.8,563.4 516.5,588.4 473.2,563.4 473.2,513.4 516.5,488.4 559.8,513.4"    fill="#2A6B50" opacity="0.95"/>
+    <polygon points="555.5,560.9 516.5,583.4 477.5,560.9 477.5,515.9 516.5,493.4 555.5,515.9" fill="#163D2C"/>
+    <text x="516" y="535" text-anchor="middle"
+          font-family="Georgia,serif" font-size="10" font-weight="bold"
+          fill="rgba(255,255,255,0.95)">237 tests</text>
+    <text x="516" y="550" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="8"
-          fill="rgba(255,255,255,0.60)">Offline</text>
+          fill="rgba(255,255,255,0.65)">unitaires</text>
   </g>
 </svg>
