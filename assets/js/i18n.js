@@ -57,7 +57,7 @@ const T = {
 'title.colleges':    {fr:'Les 4 collèges du Conseil',         en:'The 4 Board Colleges'},
 'title.organes':     {fr:'Les 6 organes en détail',           en:'The 6 bodies in detail'},
 'title.matrix':      {fr:'Matrice des décisions',             en:'Decision matrix'},
-'title.separation':  {fr:'Séparation bien commun / entités de services', en:'Commons / service entities separation'},
+'title.separation':  {fr:'Séparation structurelle : bien commun et entités de services', en:'Structural separation: commons and service entities'},
 'title.modules':     {fr:'5 modules intégrés — Pipeline end-to-end', en:'5 integrated modules — End-to-end pipeline'},
 'title.fonctions':   {fr:'Les 40 fonctions de statAfrikR v0.1.0', en:'The 40 statAfrikR v0.1.0 functions'},
 'title.install2':    {fr:'Installation et premier usage',     en:'Installation and first use'},
