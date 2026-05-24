@@ -48,12 +48,10 @@
 
 <!-- ── Hero ─────────────────────────────────────────────────── -->
 <header class="hero" role="banner">
-  <div class="hero-pattern" aria-hidden="true">
-    <img src="assets/img/hero-hexes.svg" alt=""
-         style="position:absolute;top:0;right:0;height:100%;width:60%;object-fit:cover;object-position:right center;pointer-events:none;"
-         loading="eager">
-  </div>
-  <div class="hero-inner">
+  
+  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;min-height:88vh;max-width:100%;padding:0;">
+  <!-- Colonne gauche : texte -->
+  <div style="padding:80px 48px 80px 6vw;max-width:680px;">
     <div class="hero-badge" aria-label="Statut">Package CRAN officiel · Avril 2026</div>
     <h1 data-fr="statAfrikR Foundation" data-en="statAfrikR Foundation">statAfrikR Foundation</h1>
     <p class="hero-sub" data-fr="Foundation for African Statistical Innovation &amp; Open Data" data-en="Foundation for African Statistical Innovation &amp; Open Data">Foundation for African Statistical Innovation &amp; Open Data</p>
@@ -64,7 +62,8 @@
       <a href="package.html" class="btn btn-primary" data-fr="Découvrir statAfrikR" data-en="Discover statAfrikR">Découvrir statAfrikR</a>
       <a href="partenariat.html" class="btn btn-outline" data-fr="Devenir partenaire INS" data-en="Become an NSO partner">Devenir partenaire INS</a>
     </div>
-    <div class="hero-stats" role="region" aria-label="Statistiques clés">
+    <div class="hero-stats" role="region" aria-label="Statistiques clés"
+         style="grid-template-columns:repeat(2,1fr);max-width:none;padding-top:32px;">
       <div>
         <div class="hero-stat-num" id="cran-total">...</div>
         <div class="hero-stat-label" data-fr="Téléchargements CRAN en 1 mois" data-en="CRAN downloads in 1 month">Téléchargements CRAN en 1 mois</div>
@@ -82,7 +81,30 @@
         <div class="hero-stat-label" data-fr="Statisticiens à certifier (2028)" data-en="Statisticians to certify (2028)">Statisticiens à certifier (2028)</div>
       </div>
     </div>
+  </div><!-- /col-gauche -->
+
+  <!-- Colonne droite : hex stickers animés -->
+  <div id="hex-wall" style="
+    position:relative;
+    height:88vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  ">
+    <img src="assets/img/hero-hexes.svg"
+         id="hex-svg"
+         alt="Écosystème R statAfrikR — hex stickers"
+         style="width:105%;height:110%;object-fit:cover;object-position:center;
+                filter:drop-shadow(0 4px 24px rgba(0,0,0,0.4));
+                transition:transform 0.1s ease-out;"
+         loading="eager">
+    <!-- Dégradé fondu vers le centre -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,var(--ink) 0%,transparent 25%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 10%,rgba(27,43,59,0.15) 90%);pointer-events:none;"></div>
   </div>
+
+  </div><!-- /hero-inner grid -->
 </header>
 
 <main>
@@ -354,6 +376,27 @@ donnees &lt;- <span class="code-fn">import_excel</span>(<span class="code-str">"
 
 <div class="org-tooltip" role="tooltip" aria-live="polite"></div>
 <script src="assets/js/main.js"></script>
+<script>
+// Parallax souris sur les hex stickers
+(function(){
+  const wall = document.getElementById('hex-wall');
+  const svg  = document.getElementById('hex-svg');
+  if (!wall || !svg) return;
+  let tX=0, tY=0, cX=0, cY=0;
+  document.addEventListener('mousemove', e => {
+    const rx = (e.clientX / window.innerWidth  - 0.5) * 18;
+    const ry = (e.clientY / window.innerHeight - 0.5) * 12;
+    tX = rx; tY = ry;
+  });
+  function animate() {
+    cX += (tX - cX) * 0.06;
+    cY += (tY - cY) * 0.06;
+    svg.style.transform = `translate(${cX}px, ${cY}px)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/stats.js"></script>
 </body>

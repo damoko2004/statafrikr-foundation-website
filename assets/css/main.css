@@ -1002,3 +1002,16 @@ tbody tr:hover { background: var(--sage); }
   color: var(--slate);
 }
 .don-impact strong { color: var(--pine); }
+
+/* ── Hero 2 colonnes responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  #hex-wall { display: none !important; }
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    min-height: 70vh !important;
+  }
+  .hero-inner > div:first-child {
+    padding: 60px 24px !important;
+    max-width: 100% !important;
+  }
+}
