@@ -23,8 +23,8 @@
       <li><a href="formation.html" data-i18n="nav.formation">Formation</a></li>
       <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
       <li><a href="communaute.html" data-i18n="nav.communaute">Communauté</a></li>
-      <li><a href="don.html" class="nav-don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
-      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+      <li><a href="don.html" class="nav-don" data-i18n="nav.don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
+      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire" data-i18n="nav.partenaire">Devenir partenaire</a></li>
     </ul>
     <div class="nav-lang">
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -36,14 +36,14 @@
 
 <header class="page-hero">
   <div class="page-hero-inner">
-    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Le package</span></nav>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html" data-i18n="bc.home">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc.package">Le package</span></nav>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
       <span class="badge badge-green">CRAN v0.1.0</span>
       <span class="badge" style="background:rgba(156,106,16,0.3);color:#F6C97F;">GPL-3</span>
       <span class="badge badge-blue"><span class="cran-total-val">375</span>+ téléchargements</span>
     </div>
-    <h1>Le package statAfrikR</h1>
-    <p class="lead">Premier package R open source dédié aux INS africains — 40 fonctions · 5 modules · 237 tests unitaires</p>
+    <h1 data-i18n="page.pkg.h1">Le package statAfrikR</h1>
+    <p class="lead" data-i18n="page.pkg.lead">Premier package R open source dédié aux INS africains — 40 fonctions · 5 modules · 237 tests unitaires</p>
     <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
       <a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Voir sur le CRAN</a>
       <a href="https://damoko2004.github.io/statAfrikR/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Documentation</a>
@@ -77,8 +77,8 @@
 <!-- 5 Modules -->
 <section id="modules" aria-labelledby="modules-title">
   <div class="container">
-    <p class="section-label text-center">Architecture</p>
-    <h2 id="modules-title" class="section-title text-center fade-in">5 modules intégrés — Pipeline end-to-end</h2>
+    <p class="section-label text-center" data-i18n="label.archi">Architecture</p>
+    <h2 id="modules-title" data-i18n="title.modules" class="section-title text-center fade-in">5 modules intégrés — Pipeline end-to-end</h2>
     <div class="tabs fade-in" role="tablist">
       <div class="tab-list">
         <button class="tab-btn" role="tab" aria-selected="true">01 — Collecte</button>
@@ -256,8 +256,8 @@ anon &lt;- <span class="code-fn">anonymiser_donnees</span>(donnees,
 <!-- Référentiel 40 fonctions -->
 <section id="fonctions" style="background:var(--white);" aria-labelledby="fn-title">
   <div class="container">
-    <p class="section-label text-center">Référentiel complet</p>
-    <h2 id="fn-title" class="section-title text-center fade-in">Les 40 fonctions de statAfrikR v0.1.0</h2>
+    <p class="section-label text-center" data-i18n="label.package">Référentiel complet</p>
+    <h2 id="fn-title" data-i18n="title.fonctions" class="section-title text-center fade-in">Les 40 fonctions de statAfrikR v0.1.0</h2>
     <div class="search-bar fade-in">
       <input class="search-input" id="fn-search" type="search" placeholder="Rechercher une fonction, un module…" aria-label="Rechercher une fonction">
     </div>
@@ -314,8 +314,8 @@ anon &lt;- <span class="code-fn">anonymiser_donnees</span>(donnees,
 <!-- Installation -->
 <section id="installation" aria-labelledby="install-title">
   <div class="container container-sm">
-    <p class="section-label">Démarrage rapide</p>
-    <h2 id="install-title" class="section-title fade-in">Installation et premier usage</h2>
+    <p class="section-label" data-i18n="label.package">Démarrage rapide</p>
+    <h2 id="install-title" data-i18n="title.install2" class="section-title fade-in">Installation et premier usage</h2>
     <div class="code-block fade-in">
       <button class="copy-btn" aria-label="Copier">Copier</button>
       <pre><span class="code-comment"># Depuis le CRAN (recommandé)</span>
@@ -351,7 +351,7 @@ stats   &lt;- <span class="code-fn">stat_descr</span>(plan, vars = c(<span class
 </section>
 </main>
 
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4>Le package</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 statAfrikR Foundation · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 statAfrikR Foundation · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer>
 <div class="org-tooltip" role="tooltip" aria-live="polite"></div>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/i18n.js"></script><script src="assets/js/stats.js"></script>

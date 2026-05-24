@@ -23,8 +23,8 @@
       <li><a href="formation.html" data-i18n="nav.formation">Formation</a></li>
       <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
       <li><a href="communaute.html" data-i18n="nav.communaute">Communauté</a></li>
-      <li><a href="don.html" class="nav-don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
-      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+      <li><a href="don.html" class="nav-don" data-i18n="nav.don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
+      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire" data-i18n="nav.partenaire">Devenir partenaire</a></li>
     </ul>
     <div class="nav-lang">
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -36,10 +36,10 @@
 
 <header class="page-hero">
   <div class="page-hero-inner">
-    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Gouvernance</span></nav>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html" data-i18n="bc.home">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc.gouvernance">Gouvernance</span></nav>
     <p class="section-label" style="color:var(--amber)">Architecture institutionnelle</p>
-    <h1>Gouvernance de la Foundation</h1>
-    <p class="lead">Modèle DuckDB Foundation adapté au contexte panafricain — Collégiale, neutre, anti-capture</p>
+    <h1 data-i18n="page.gouv.h1">Gouvernance de la Foundation</h1>
+    <p class="lead" data-i18n="page.gouv.lead">Modèle DuckDB Foundation adapté au contexte panafricain — Collégiale, neutre, anti-capture</p>
   </div>
 </header>
 
@@ -47,8 +47,8 @@
 <!-- Organigramme SVG -->
 <section id="organigramme" aria-labelledby="org-title">
   <div class="container">
-    <p class="section-label text-center">Architecture</p>
-    <h2 id="org-title" class="section-title text-center fade-in">Les 6 organes de gouvernance</h2>
+    <p class="section-label text-center" data-i18n="label.gouvernance">Architecture</p>
+    <h2 id="org-title" data-i18n="title.gouvernance" class="section-title text-center fade-in">Les 6 organes de gouvernance</h2>
     <p class="section-sub text-center fade-in" style="margin:0 auto 40px;">Survol des nœuds pour afficher le rôle de chaque organe.</p>
     <div class="org-chart fade-in" role="img" aria-label="Organigramme de gouvernance statAfrikR Foundation">
       <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto;">
@@ -124,31 +124,31 @@
 <!-- 4 Collèges -->
 <section id="colleges" style="background:var(--white);" aria-labelledby="colleges-title">
   <div class="container">
-    <p class="section-label text-center">Conseil d'administration</p>
-    <h2 id="colleges-title" class="section-title text-center fade-in">Les 4 collèges du Conseil</h2>
+    <p class="section-label text-center" data-i18n="label.gouvernance">Conseil d'administration</p>
+    <h2 id="colleges-title" data-i18n="title.colleges" class="section-title text-center fade-in">Les 4 collèges du Conseil</h2>
     <div class="college-grid" style="margin-top:32px;">
       <div class="college-card fade-in">
         <div class="college-num">I</div>
-        <div class="college-title">Collège fondateur</div>
-        <div class="college-name">Dikers Amoko</div>
+        <div class="college-title" data-i18n="college.1.title">Collège fondateur</div>
+        <div class="college-name" data-i18n="college.1.name">Dikers Amoko</div>
         <p class="college-desc">Fondateur de statAfrikR, membre de droit. Sa voix est prépondérante en cas de partage égal pendant les cinq (5) premières années. 1 siège permanent.</p>
       </div>
       <div class="college-card fade-in">
         <div class="college-num">II</div>
-        <div class="college-title">Collège INS africains</div>
-        <div class="college-name">INS partenaires signataires</div>
+        <div class="college-title" data-i18n="college.2.title">Collège INS africains</div>
+        <div class="college-name" data-i18n="college.2.name">INS partenaires signataires</div>
         <p class="college-desc">Représentants désignés par les Instituts Nationaux de Statistique africains ayant signé un protocole de partenariat (MoU). 1 à 2 sièges · Mandat 3 ans.</p>
       </div>
       <div class="college-card fade-in">
         <div class="college-num">III</div>
-        <div class="college-title">Collège académique</div>
-        <div class="college-name">Universitaires africains</div>
+        <div class="college-title" data-i18n="college.3.title">Collège académique</div>
+        <div class="college-name" data-i18n="college.3.name">Universitaires africains</div>
         <p class="college-desc">Représentants d'institutions universitaires ou de recherche statistique africaines reconnues (ENSEA, ISSEA, ENEA, FASEG…). 1 à 2 sièges · Mandat 3 ans.</p>
       </div>
       <div class="college-card fade-in">
         <div class="college-num">IV</div>
-        <div class="college-title">Collège experts indépendants</div>
-        <div class="college-name">Personnalités qualifiées</div>
+        <div class="college-title" data-i18n="college.4.title">Collège experts indépendants</div>
+        <div class="college-name" data-i18n="college.4.name">Personnalités qualifiées</div>
         <p class="college-desc">Experts en data science, open source, gouvernance des données ou financement du développement, cooptés par le Conseil. 2 à 4 sièges · Mandat 3 ans.</p>
       </div>
     </div>
@@ -161,8 +161,8 @@
 <!-- Accordion 6 organes -->
 <section id="organes" aria-labelledby="organes-title">
   <div class="container container-sm">
-    <p class="section-label">Détail des organes</p>
-    <h2 id="organes-title" class="section-title fade-in">Les 6 organes en détail</h2>
+    <p class="section-label" data-i18n="label.gouvernance">Détail des organes</p>
+    <h2 id="organes-title" data-i18n="title.organes" class="section-title fade-in">Les 6 organes en détail</h2>
     <div class="accordion fade-in" role="list" style="margin-top:32px;">
       <div class="accordion-item" role="listitem">
         <button class="accordion-btn" aria-expanded="false"><span>Conseil d'administration (Board)</span><span class="accordion-icon" aria-hidden="true">+</span></button>
@@ -196,7 +196,7 @@
 <section id="decisions" style="background:var(--white);" aria-labelledby="matrix-title">
   <div class="container">
     <p class="section-label text-center">Prises de décision</p>
-    <h2 id="matrix-title" class="section-title text-center fade-in">Matrice des décisions</h2>
+    <h2 id="matrix-title" data-i18n="title.matrix" class="section-title text-center fade-in">Matrice des décisions</h2>
     <div class="table-wrap fade-in">
       <table role="table">
         <thead><tr><th>Décision</th><th>Organe compétent</th><th>Majorité</th><th>Quorum</th></tr></thead>
@@ -220,7 +220,7 @@
 <section id="separation" aria-labelledby="sep-title">
   <div class="container">
     <p class="section-label text-center">Modèle DuckDB Foundation</p>
-    <h2 id="sep-title" class="section-title text-center fade-in">Séparation bien commun / entités de services</h2>
+    <h2 id="sep-title" data-i18n="title.separation" class="section-title text-center fade-in">Séparation bien commun / entités de services</h2>
     <p class="section-sub text-center fade-in" style="margin:0 auto 40px;">Inspiré de DuckDB Foundation (bien commun) / DuckDB Labs (commercial) — La Foundation protège le code, la marque et la gouvernance. Les services commerciaux restent dans des entités distinctes et encadrées.</p>
     <div class="split-cols fade-in">
       <div class="split-col" style="background:var(--ink);">
@@ -248,7 +248,7 @@
 </section>
 </main>
 
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4>Le package</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 statAfrikR Foundation · Fonds de dotation en constitution · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span data-i18n="footer.legal">© 2026 statAfrikR Foundation · Fonds de dotation en constitution · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer>
 <div class="org-tooltip" role="tooltip" aria-live="polite"></div>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/i18n.js"></script><script src="assets/js/stats.js"></script>

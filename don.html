@@ -26,7 +26,7 @@
       <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
       <li><a href="communaute.html" data-i18n="nav.communaute">Communauté</a></li>
       <li><a href="don.html" class="nav-don active" data-i18n="nav.don">Faire un don</a></li>
-      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire" data-i18n="nav.partenaire">Devenir partenaire</a></li>
     </ul>
     <div class="nav-lang">
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -39,10 +39,10 @@
 <!-- Hero don -->
 <header class="page-hero" style="background:linear-gradient(135deg,var(--ink) 60%,var(--pine-d) 100%);">
   <div class="page-hero-inner">
-    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Faire un don</span></nav>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html" data-i18n="bc.home">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc.don">Faire un don</span></nav>
     <p class="section-label" style="color:var(--amber)">Soutenir la mission</p>
     <h1 data-i18n="don.title" style="color:var(--white)">Soutenir la statAfrikR Foundation</h1>
-    <p class="lead" data-i18n="don.sub">Votre don finance le développement open source, les formations gratuites et les certifications pour les statisticiens africains.</p>
+    <p class="lead" data-i18n="page.don.lead">Votre don finance le développement open source, les formations gratuites et les certifications pour les statisticiens africains.</p>
   </div>
 </header>
 
@@ -78,23 +78,23 @@
       <!-- Sélecteur de montant -->
       <div>
         <p class="section-label">Votre contribution</p>
-        <h2 id="don-title" class="section-title fade-in">Choisissez votre montant</h2>
+        <h2 id="don-title" data-i18n="title.don.montant" class="section-title fade-in">Choisissez votre montant</h2>
         <div class="don-grid fade-in" role="group" aria-label="Montants de don">
           <button class="don-amount" onclick="selectAmount(10, this)" aria-label="Faire un don de 10 euros">
             <div class="don-amount-num">10 €</div>
-            <div class="don-amount-label">Contributeur</div>
+            <div class="don-amount-label" data-i18n="don.chip1">Contributeur</div>
           </button>
           <button class="don-amount" onclick="selectAmount(25, this)" aria-label="Faire un don de 25 euros">
             <div class="don-amount-num">25 €</div>
-            <div class="don-amount-label">Soutien</div>
+            <div class="don-amount-label" data-i18n="don.chip2">Soutien</div>
           </button>
           <button class="don-amount selected" onclick="selectAmount(50, this)" aria-label="Faire un don de 50 euros">
             <div class="don-amount-num">50 €</div>
-            <div class="don-amount-label">Partenaire</div>
+            <div class="don-amount-label" data-i18n="don.chip3">Partenaire</div>
           </button>
           <button class="don-amount" onclick="selectAmount(150, this)" aria-label="Faire un don de 150 euros">
             <div class="don-amount-num">150 €</div>
-            <div class="don-amount-label">Bienfaiteur</div>
+            <div class="don-amount-label" data-i18n="don.chip4">Bienfaiteur</div>
           </button>
         </div>
 
@@ -172,7 +172,7 @@
 <section style="background:var(--white);" aria-labelledby="why-title">
   <div class="container">
     <p class="section-label text-center">Impact de votre don</p>
-    <h2 id="why-title" class="section-title text-center fade-in">Où va votre contribution</h2>
+    <h2 id="why-title" data-i18n="title.don.impact" class="section-title text-center fade-in">Où va votre contribution</h2>
     <div class="grid-3" style="margin-top:32px;">
       <div class="card card-sage fade-in">
         <div class="card-icon" aria-hidden="true">📦</div>
@@ -197,9 +197,9 @@
 </section>
 
 <!-- CTA final -->
-<section style="background:var(--pine);padding:64px 0;" aria-labelledby="cta-don">
+<section style="background:var(--petrol);padding:64px 0;" aria-labelledby="cta-don">
   <div class="container text-center">
-    <h2 id="cta-don" style="color:var(--white);margin-bottom:12px;">Ensemble pour la statistique africaine</h2>
+    <h2 id="cta-don" data-i18n="title.don.ensemble" style="color:var(--white);margin-bottom:12px;">Ensemble pour la statistique africaine</h2>
     <p style="color:rgba(255,255,255,0.7);max-width:52ch;margin:0 auto 28px;">
       375 téléchargements en un mois. La demande est là. Votre don transforme cet élan en infrastructure statistique durable pour l'Afrique.
     </p>
@@ -222,12 +222,12 @@
         <p data-i18n="footer.legal">Fonds de dotation en cours de constitution · Loi n°2008-776 du 4 août 2008.</p>
         <p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p>
       </div>
-      <div class="footer-col"><h4>La Foundation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div>
-      <div class="footer-col"><h4>Le package</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.col2">Pages détaillées</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div>
       <div class="footer-col"><h4>Soutenir</h4><a href="don.html">Faire un don</a><a href="partenariat.html">Partenariat INS</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">Contribuer au code</a><a href="contact.html">Contact</a></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 statAfrikR Foundation · Fonds de dotation en constitution · GPL-3</span>
+      <span data-i18n="footer.legal">© 2026 statAfrikR Foundation · Fonds de dotation en constitution · GPL-3</span>
       <div class="footer-links">
         <a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a>
         <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a>

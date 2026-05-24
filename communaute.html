@@ -24,8 +24,8 @@
       <li><a href="formation.html" data-i18n="nav.formation">Formation</a></li>
       <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
       <li><a href="communaute.html" class="active" data-i18n="nav.communaute">Communauté</a></li>
-      <li><a href="don.html" class="nav-don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
-      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+      <li><a href="don.html" class="nav-don" data-i18n="nav.don" data-i18n="nav.don" aria-label="Faire un don à la Foundation">Faire un don</a></li>
+      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire" data-i18n="nav.partenaire">Devenir partenaire</a></li>
     </ul>
     <div class="nav-lang">
       <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -37,16 +37,16 @@
 <main>
 
 <header class="page-hero"><div class="page-hero-inner">
-  <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Communauté</span></nav>
+  <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html" data-i18n="bc.home">Accueil</a><span>›</span><span style="color:rgba(255,255,255,0.7)" data-i18n="bc.communaute">Communauté</span></nav>
   <p class="section-label" style="color:var(--amber)">Ensemble</p>
-  <h1>La communauté statAfrikR</h1>
-  <p class="lead">Statisticiens africains, développeurs R, INS, universités — Rejoignez-nous</p>
+  <h1 data-i18n="page.comm.h1">La communauté statAfrikR</h1>
+  <p class="lead" data-i18n="page.comm.lead">Statisticiens africains, développeurs R, INS, universités — Rejoignez-nous</p>
 </div></header>
 
 <section id="rejoindre" aria-labelledby="join-title">
 <div class="container">
   <p class="section-label text-center">Premiers pas</p>
-  <h2 id="join-title" class="section-title text-center fade-in">4 façons de rejoindre</h2>
+  <h2 id="join-title" data-i18n="title.rejoindre" class="section-title text-center fade-in">4 façons de rejoindre</h2>
   <div class="grid-4" style="margin-top:32px;">
     <a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener" class="card" style="text-align:center;text-decoration:none;border-top:4px solid #5865F2;">
       <div style="font-size:2.5rem;margin-bottom:12px;">💬</div>
@@ -79,7 +79,7 @@
 <section id="contribuer" style="background:var(--white);" aria-labelledby="contrib-title">
 <div class="container">
   <p class="section-label text-center">Contribution</p>
-  <h2 id="contrib-title" class="section-title text-center fade-in">Comment contribuer à statAfrikR</h2>
+  <h2 id="contrib-title" data-i18n="title.contribuer" class="section-title text-center fade-in">Comment contribuer à statAfrikR</h2>
   <div class="grid-3" style="margin-top:32px;">
     <div class="card card-sage fade-in"><h3 class="card-title">📊 Utiliser statAfrikR</h3>
       <p class="card-text">Installez le package, utilisez-le sur vos données réelles, partagez vos retours via GitHub Issues ou Discord. Chaque retour terrain oriente la roadmap.</p>
@@ -101,12 +101,12 @@
 <section id="stats-live" aria-labelledby="live-title">
 <div class="container">
   <p class="section-label text-center">Statistiques live</p>
-  <h2 id="live-title" class="section-title text-center fade-in">La communauté en chiffres</h2>
+  <h2 id="live-title" data-i18n="title.comm.stats" class="section-title text-center fade-in">La communauté en chiffres</h2>
   <div class="stats-grid" style="margin-top:32px;">
-    <div class="stat-card fade-in"><div class="stat-num cran-total-val">375</div><div class="stat-label">Téléchargements CRAN totaux</div></div>
-    <div class="stat-card fade-in"><div class="stat-num" id="gh-stars">—</div><div class="stat-label">GitHub stars</div></div>
-    <div class="stat-card fade-in"><div class="stat-num" id="gh-forks">—</div><div class="stat-label">GitHub forks</div></div>
-    <div class="stat-card fade-in"><div class="stat-num" id="gh-issues">—</div><div class="stat-label">Issues ouvertes</div></div>
+    <div class="stat-card fade-in"><div class="stat-num cran-total-val">375</div><div class="stat-label" data-i18n="comm.kpi.1">Téléchargements CRAN totaux</div></div>
+    <div class="stat-card fade-in"><div class="stat-num" id="gh-stars">—</div><div class="stat-label" data-i18n="comm.kpi.2">GitHub stars</div></div>
+    <div class="stat-card fade-in"><div class="stat-num" id="gh-forks">—</div><div class="stat-label" data-i18n="comm.kpi.3">GitHub forks</div></div>
+    <div class="stat-card fade-in"><div class="stat-num" id="gh-issues">—</div><div class="stat-label" data-i18n="comm.kpi.4">Issues ouvertes</div></div>
   </div>
   <div class="chart-container fade-in" id="cran-chart" style="margin-top:40px;"><svg viewBox="0 0 700 200" style="width:100%;"><text x="350" y="110" text-anchor="middle" font-family="Arial" font-size="14" fill="#718096">Chargement des téléchargements quotidiens...</text></svg></div>
   <p style="text-align:center;margin-top:12px;font-size:0.82rem;color:var(--mist);">Source : cranlogs.r-pkg.org · Mis à jour au chargement de la page</p>
@@ -114,6 +114,6 @@
 </section>
 
 </main>
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4>Le package</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 statAfrikR Foundation · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer><div class="org-tooltip" role="tooltip" aria-live="polite"></div><script src="assets/js/main.js"></script>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Foundation</span></div></a><p>Fondation panafricaine open source · Loi n°2008-776 du 4 août 2008.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Fondation</h4><a href="foundation.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 statAfrikR Foundation · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer><div class="org-tooltip" role="tooltip" aria-live="polite"></div><script src="assets/js/main.js"></script>
 <script src="assets/js/i18n.js"></script><script src="assets/js/stats.js"></script>
 </body></html>
