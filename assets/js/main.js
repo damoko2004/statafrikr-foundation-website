@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   statAfrikR Foundation — main.js
+   Association statAfrikR — main.js
    Navigation · Tabs · Accordion · Stepper · Compteurs · i18n
    ═══════════════════════════════════════════════════════════════ */
 'use strict';

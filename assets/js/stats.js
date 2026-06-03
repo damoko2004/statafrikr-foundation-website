@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   statAfrikR Foundation — stats.js
+   Association statAfrikR — stats.js
    CRAN downloads depuis le 2026-04-03 · jour par jour
    API : cranlogs.r-pkg.org
    ═══════════════════════════════════════════════════════════════ */
