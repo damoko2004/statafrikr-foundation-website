@@ -49,7 +49,9 @@
     <div>
       <p class="section-label">Formulaire de contact</p>
       <h2 id="form-title" class="section-title fade-in" style="margin-bottom:32px;">Envoyez-nous un message</h2>
-      <form id="contact-form" action="https://formspree.io/f/diamoko" method="POST" novalidate>
+      <form id="contact-form" action="https://formsubmit.co/diamoko@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nouveau message — statafrikr.org">
+        <input type="hidden" name="_template" value="table">
         <div class="form-grid-2">
           <div class="form-group"><label class="form-label" for="nom">Nom complet *</label><input class="form-input" type="text" id="nom" name="nom" required placeholder="Prénom Nom" aria-required="true"></div>
           <div class="form-group"><label class="form-label" for="institution">Institution</label><input class="form-input" type="text" id="institution" name="institution" placeholder="INS, Université, Organisation..."></div>
