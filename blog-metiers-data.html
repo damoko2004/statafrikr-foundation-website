@@ -7,6 +7,25 @@
   <meta property="og:description" content="Du RGPH du Tchad à l'EHCVM du Burkina Faso : ce que la data science et statAfrikR changent concrètement pour les INS africains.">
   <title>Les métiers de la data au service de la statistique publique africaine — statAfrikR</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    @media(min-width:901px){ main .grid-3{grid-template-columns:repeat(3,1fr);} }
+    main .grid-3 .card, main .grid-2 .card{height:100%;box-shadow:0 8px 22px rgba(15,23,42,0.07);}
+    .badge{background:var(--green-bg);color:var(--h-green);}
+    .flow{display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:12px;margin:8px 0 6px;}
+    .flow-step{flex:1 1 150px;min-width:132px;max-width:210px;border-radius:16px;padding:18px 14px 15px;text-align:center;color:#fff;background:linear-gradient(155deg,#2F6F5F 0%,#1D4E89 100%);box-shadow:0 12px 24px rgba(29,78,137,0.22);}
+    .flow-step .fi{font-size:1.7rem;display:block;margin-bottom:6px;}
+    .flow-step .fn{font-weight:700;font-size:1rem;}
+    .flow-step .fd{display:block;font-size:0.76rem;opacity:.9;margin-top:5px;font-weight:400;line-height:1.35;}
+    .flow-arrow{align-self:center;color:var(--amber);font-size:1.5rem;font-weight:800;}
+    .flow-cycle{text-align:center;color:var(--h-green);font-weight:700;font-size:0.9rem;margin-top:12px;}
+    @media(max-width:640px){.flow-arrow{transform:rotate(90deg);width:100%;}}
+    .modtab{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--bord-1);border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(15,23,42,0.06);font-size:0.92rem;}
+    .modtab th{background:var(--h-navy);color:#fff;text-align:left;padding:12px 14px;font-size:0.85rem;letter-spacing:.02em;}
+    .modtab td{padding:11px 14px;border-top:1px solid var(--bord-1);color:var(--txt-1);vertical-align:top;line-height:1.5;}
+    .modtab tr:nth-child(even) td{background:#F7FBF9;}
+    .modtab td code{background:#EEF3F1;padding:1px 5px;border-radius:5px;font-size:0.85em;}
+    .modtab .mname{font-weight:700;color:var(--h-green);white-space:nowrap;}
+  </style>
 </head>
 <body>
 <nav class="nav" role="navigation" aria-label="Navigation principale">
@@ -129,38 +148,37 @@
   <div class="container">
     <p class="section-label text-center">Un outil de bout en bout</p>
     <h2 id="mod-title" class="section-title text-center fade-in">Un package qui couvre tout le cycle</h2>
-    <p class="section-sub text-center fade-in" style="margin:0 auto 48px;">De l'import des données brutes au rapport final, cinq modules complémentaires.</p>
-    <div class="grid-3">
-      <div class="card card-sage fade-in">
-        <div class="card-icon" aria-hidden="true">📥</div>
-        <h3 class="card-title">Collecte</h3>
-        <p class="card-text">Import multi-sources : <code>import_kobo()</code>, <code>import_odk()</code> via API ; migration de <code>import_stata()</code>, <code>import_spss()</code>, <code>import_sas()</code> sans perdre labels ni pondérations ; <code>import_cspro()</code> lit nativement les <code>.dat</code>/<code>.dcf</code> des RGPH.</p>
-      </div>
-      <div class="card card-sage fade-in">
-        <div class="card-icon" aria-hidden="true">🧹</div>
-        <h3 class="card-title">Traitement</h3>
-        <p class="card-text">Qualité et préparation : <code>check_types()</code>, <code>check_na()</code>, <code>nettoyer_libelles()</code> (standards AFRISTAT), <code>recoder_variable()</code>, et <code>valider_qualite_donnees()</code> qui produit un rapport qualité noté sur 100 avec export PDF.</p>
-      </div>
-      <div class="card card-sage fade-in">
-        <div class="card-icon" aria-hidden="true">📊</div>
-        <h3 class="card-title">Analyse</h3>
-        <p class="card-text">Statistiques pondérées compatibles plans de sondage complexes : <code>appliquer_ponderations()</code>, <code>stat_descr()</code>, <code>tab_croisee()</code> ; indicateurs de développement humain avec <code>calcul_ipm()</code>, <code>calcul_idh()</code>, <code>decomposer_inegalite()</code>.</p>
-      </div>
-      <div class="card card-sage fade-in">
-        <div class="card-icon" aria-hidden="true">🗺️</div>
-        <h3 class="card-title">Visualisation</h3>
-        <p class="card-text"><code>theme_ins()</code> et <code>palette_ins()</code> pour une charte institutionnelle ; pyramides des âges, courbes de tendance et cartes thématiques exportables en PNG haute résolution et SVG.</p>
-      </div>
-      <div class="card card-sage fade-in">
-        <div class="card-icon" aria-hidden="true">📤</div>
-        <h3 class="card-title">Diffusion</h3>
-        <p class="card-text"><code>generer_rapport()</code> (Word/PDF depuis un template), <code>generer_metadonnees_ddi()</code>, <code>exporter_sdmx()</code> et <code>anonymiser_donnees()</code> pour protéger les données avant diffusion.</p>
-      </div>
-      <div class="card card-parch fade-in">
-        <div class="card-icon" aria-hidden="true">🔎</div>
-        <h3 class="card-title">Et la suite</h3>
-        <p class="card-text">La v0.2.0 (soumission CRAN prévue en septembre 2026) ajoute 13 jalons : indices FGT, 20 indicateurs ODD, IPM Alkire-Foster, cartographie de 888 subdivisions, module PIB et dashboard Shiny.</p>
-      </div>
+    <p class="section-sub text-center fade-in" style="margin:0 auto 32px;">De l'import des données brutes au rapport final, cinq modules s'enchaînent comme un pipeline reproductible.</p>
+
+    <div class="flow" role="img" aria-label="Pipeline : Collecte, Traitement, Analyse, Visualisation, Diffusion">
+      <div class="flow-step"><span class="fi">📥</span><span class="fn">Collecte</span><span class="fd">Import multi-sources</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><span class="fi">🧹</span><span class="fn">Traitement</span><span class="fd">Qualité &amp; préparation</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><span class="fi">📊</span><span class="fn">Analyse</span><span class="fd">Indicateurs pondérés</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><span class="fi">🗺️</span><span class="fn">Visualisation</span><span class="fd">Cartes &amp; graphiques</span></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><span class="fi">📤</span><span class="fn">Diffusion</span><span class="fd">Rapports &amp; standards</span></div>
+    </div>
+    <p class="flow-cycle">↻ Un cycle reproductible : chaque étape est rejouable et documentée</p>
+
+    <div style="overflow-x:auto;margin-top:28px;">
+    <table class="modtab">
+      <thead><tr><th>Module</th><th>Rôle</th><th>Fonctions clés</th></tr></thead>
+      <tbody>
+        <tr><td class="mname">📥 Collecte</td><td>Importer et normaliser des sources hétérogènes</td><td><code>import_kobo()</code>, <code>import_odk()</code>, <code>import_stata()</code>, <code>import_cspro()</code></td></tr>
+        <tr><td class="mname">🧹 Traitement</td><td>Contrôler la qualité et préparer les données</td><td><code>check_na()</code>, <code>nettoyer_libelles()</code>, <code>recoder_variable()</code>, <code>valider_qualite_donnees()</code></td></tr>
+        <tr><td class="mname">📊 Analyse</td><td>Produire statistiques et indicateurs</td><td><code>appliquer_ponderations()</code>, <code>stat_descr()</code>, <code>calcul_ipm()</code>, <code>calcul_idh()</code></td></tr>
+        <tr><td class="mname">🗺️ Visualisation</td><td>Cartographier et illustrer</td><td><code>theme_ins()</code>, <code>palette_ins()</code>, cartes thématiques PNG/SVG</td></tr>
+        <tr><td class="mname">📤 Diffusion</td><td>Générer rapports et métadonnées</td><td><code>generer_rapport()</code>, <code>generer_metadonnees_ddi()</code>, <code>exporter_sdmx()</code>, <code>anonymiser_donnees()</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="card card-parch fade-in" style="margin-top:24px;">
+      <h3 class="card-title">🔎 Et la suite — v0.2.0 (septembre 2026)</h3>
+      <p class="card-text">13 jalons : indices <strong>FGT</strong>, 20 indicateurs <strong>ODD</strong>, <strong>IPM Alkire-Foster</strong>, cartographie de <strong>888 subdivisions</strong> hors ligne, module <strong>PIB</strong> et <strong>dashboard Shiny</strong>.</p>
     </div>
   </div>
 </section>
