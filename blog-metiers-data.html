@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Logiciels propriétaires coûteux, cycles de publication trop longs, faible reproductibilité : comment les métiers de la data et le package open source statAfrikR modernisent les instituts nationaux de statistique d'Afrique.">
+  <meta property="og:title" content="Les métiers de la data au service de la statistique publique africaine — statAfrikR">
+  <meta property="og:description" content="Du RGPH du Tchad à l'EHCVM du Burkina Faso : ce que la data science et statAfrikR changent concrètement pour les INS africains.">
+  <title>Les métiers de la data au service de la statistique publique africaine — statAfrikR</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<nav class="nav" role="navigation" aria-label="Navigation principale">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Accueil Association statAfrikR">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">statAfrikR</span>
+        <span class="nav-logo-sub">Association</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="association.html" data-i18n="nav.association">Association</a></li>
+      <li><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a></li>
+      <li><a href="package.html" data-i18n="nav.package">Package</a></li>
+      <li><a href="formation.html" data-i18n="nav.formation">Formation</a></li>
+      <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
+      <li><a href="communaute.html" data-i18n="nav.communaute">Communauté</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="don.html" class="nav-don" data-i18n="nav.don" aria-label="Faire un don à l'Association">Faire un don</a></li>
+      <li><a href="partenariat.html" class="nav-cta" data-i18n="nav.partenaire">Devenir partenaire</a></li>
+    </ul>
+    <div class="nav-lang">
+      <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+    </div>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="index.html" data-i18n="bc.home">Accueil</a><span>›</span><a href="blog.html">Blog</a><span>›</span><span style="color:rgba(255,255,255,0.7)">Métiers de la data</span></nav>
+    <p class="section-label" style="color:var(--amber)">Blog · Data science</p>
+    <h1>Les métiers de la data au service de la statistique publique africaine</h1>
+    <p class="lead">Logiciels propriétaires coûteux, cycles de publication trop longs, faible reproductibilité : les instituts nationaux de statistique (INS) d'Afrique sont à un carrefour. Voici comment les métiers de la data — et le package open source statAfrikR — ouvrent une voie souveraine et accessible.</p>
+    <p style="margin-top:20px;color:rgba(255,255,255,0.65);font-size:0.95rem;">Par <strong style="color:rgba(255,255,255,0.9);">Dikers AMOKO</strong> · Publié le 8 juillet 2026 · ~9 min de lecture</p>
+    <p style="margin-top:18px;"><a href="blog-metiers-data.pdf" class="btn btn-primary" download>⬇&nbsp; Télécharger en PDF</a></p>
+  </div>
+</header>
+
+<main>
+<!-- En bref -->
+<section id="intro" aria-labelledby="intro-title">
+  <div class="container container-sm">
+    <div class="card card-parch fade-in" style="margin-bottom:40px;">
+      <h2 id="intro-title" class="card-title">En bref · In brief</h2>
+      <p class="card-text"><strong>FR —</strong> La numérisation transforme la production statistique mondiale, et les métiers de la data en deviennent des acteurs incontournables. Les INS africains doivent intégrer ces compétences pour rester pertinents. statAfrikR — package R open source publié sur le CRAN — apporte une réponse souveraine et pérenne : un outil gratuit, fonctionnel hors ligne, couvrant tout le cycle de production statistique.</p>
+      <p class="card-text" style="margin-top:12px;"><strong>EN —</strong> Digitisation is reshaping how official statistics are produced, and data professions are now central to the value chain. African statistical offices need these skills to stay relevant. statAfrikR — an open-source R package on CRAN — offers a sovereign, sustainable answer: a free, offline-capable tool covering the whole statistical production cycle.</p>
+    </div>
+    <p style="font-size:1.05rem;line-height:1.75;">La statistique publique africaine se trouve à un moment charnière. D'un côté, la révolution numérique bouleverse les méthodes de production, d'analyse et de diffusion des données. De l'autre, les INS africains affrontent des défis structurels profonds. La question n'est plus <em>si</em> la modernisation aura lieu, mais <em>avec quels outils</em> — et au service de qui.</p>
+  </div>
+</section>
+
+<!-- Carrefour -->
+<section id="carrefour" style="background:var(--white);" aria-labelledby="car-title">
+  <div class="container">
+    <p class="section-label text-center">Le point de départ</p>
+    <h2 id="car-title" class="section-title text-center fade-in">La statistique africaine à un carrefour</h2>
+    <p class="section-sub text-center fade-in" style="margin:0 auto 48px;">Trois freins structurels pèsent aujourd'hui sur la plupart des instituts.</p>
+    <div class="grid-3">
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">💸</div>
+        <h3 class="card-title">Des licences qui coûtent cher</h3>
+        <p class="card-text">Une licence Stata coûte de 500 à 3 000 $/an ; SAS Enterprise peut dépasser 50 000 $/an. Pour des INS aux budgets souvent inférieurs au million de dollars, c'est une part considérable des ressources — et un code fermé, impossible à adapter aux réalités locales.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">⏳</div>
+        <h3 class="card-title">Des cycles trop longs</h3>
+        <p class="card-text">Le délai entre la fin de collecte et la publication dépasse souvent <strong>18 mois</strong> pour une enquête nationale, et <strong>3 à 5 ans</strong> pour un recensement. En cause : des traitements manuels, peu d'automatisation, peu de programmation avancée.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">🔁</div>
+        <h3 class="card-title">Une reproductibilité fragile</h3>
+        <p class="card-text">Traitements interactifs, code non documenté, absence de contrôle de version et de tests : vérifier un résultat, mettre à jour une analyse ou transmettre les compétences devient très difficile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Halo des métiers -->
+<section id="halo" aria-labelledby="halo-title">
+  <div class="container">
+    <p class="section-label text-center">Trois métiers, un continuum</p>
+    <h2 id="halo-title" class="section-title text-center fade-in">Le « halo » des métiers de la data</h2>
+    <p class="section-sub text-center fade-in" style="margin:0 auto 48px;">Ces profils ne remplacent pas le statisticien : ils enrichissent ses capacités de production et d'analyse. On les situe le long d'un axe qui va des techniques informatiques aux usages métier <span style="white-space:nowrap;">(Galiana &amp; Lefebvre, 2026)</span>.</p>
+    <div class="grid-3">
+      <div class="card fade-in" style="border-top:3px solid var(--pine);">
+        <h3 class="card-title text-pine">Data engineer</h3>
+        <p class="card-text">Intégration des données (pipelines), déploiement des modèles, MLOps. Profil orienté <strong>infrastructure</strong> : il rend un traitement robuste et rejouable.</p>
+      </div>
+      <div class="card fade-in" style="border-top:3px solid var(--pine);">
+        <h3 class="card-title text-pine">Data scientist</h3>
+        <p class="card-text">Analyse des données, entraînement des modèles, préparation et labellisation. <strong>Interface</strong> entre technique et métier — le profil que statAfrikR outille en priorité.</p>
+      </div>
+      <div class="card fade-in" style="border-top:3px solid var(--pine);">
+        <h3 class="card-title text-pine">Data analyst</h3>
+        <p class="card-text">Exploration, visualisation, recommandations à l'équipe métier. Profil orienté <strong>décision</strong> : il relie les indicateurs produits à l'action publique.</p>
+      </div>
+    </div>
+    <p class="text-center fade-in" style="max-width:760px;margin:36px auto 0;color:var(--pine);font-weight:600;">Pour les INS africains, ces rôles peuvent être exercés par les statisticiens eux-mêmes, progressivement formés à R — ou par de nouvelles recrues spécialisées, selon les ressources.</p>
+  </div>
+</section>
+
+<!-- R et statAfrikR -->
+<section id="r" style="background:var(--white);" aria-labelledby="r-title">
+  <div class="container container-sm">
+    <p class="section-label">Le socle technique</p>
+    <h2 id="r-title" class="section-title fade-in">R, standard mondial — statAfrikR, son adaptation africaine</h2>
+    <p style="font-size:1.05rem;line-height:1.75;">R est devenu le langage de référence de la statistique mondiale : utilisé par l'INSEE, Eurostat, l'ONU, la Banque Mondiale et le FMI, il compte plus de <strong>20 000 packages</strong> sur le CRAN. Contrairement aux logiciels propriétaires, il est gratuit, ouvert, et porté par une communauté internationale qui garantit son évolution.</p>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;"><strong>statAfrikR</strong> en est l'adaptation africaine la plus avancée. Package R open source publié sur le CRAN, sa version <strong>v0.1.0</strong> propose <strong>40 fonctions réparties en 5 modules</strong> et a été téléchargée près de <strong>800 fois en trois mois</strong>. Il est conçu pour fonctionner <strong>hors ligne</strong>, en français, sur des ordinateurs modestes.</p>
+    <div class="box-vision fade-in" role="blockquote" style="margin-top:28px;">
+      « Un INS dont les données sont propres, traçables et harmonisées est un INS qui inspire confiance. Les décisions de politique publique ne sont jamais meilleures que les données sur lesquelles elles reposent. »
+    </div>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:24px;">Quatre valeurs guident le projet : <strong>souveraineté statistique</strong> (moins de dépendance aux éditeurs étrangers), <strong>reproductibilité</strong> (résultats traçables et documentés), <strong>harmonisation</strong> (méthodes alignées sur AFRISTAT, l'ONU, les ODD et l'Agenda 2063) et <strong>inclusion</strong> (gratuité GPL-3, hors ligne, matériel modeste).</p>
+  </div>
+</section>
+
+<!-- Modules -->
+<section id="modules" aria-labelledby="mod-title">
+  <div class="container">
+    <p class="section-label text-center">Un outil de bout en bout</p>
+    <h2 id="mod-title" class="section-title text-center fade-in">Un package qui couvre tout le cycle</h2>
+    <p class="section-sub text-center fade-in" style="margin:0 auto 48px;">De l'import des données brutes au rapport final, cinq modules complémentaires.</p>
+    <div class="grid-3">
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">📥</div>
+        <h3 class="card-title">Collecte</h3>
+        <p class="card-text">Import multi-sources : <code>import_kobo()</code>, <code>import_odk()</code> via API ; migration de <code>import_stata()</code>, <code>import_spss()</code>, <code>import_sas()</code> sans perdre labels ni pondérations ; <code>import_cspro()</code> lit nativement les <code>.dat</code>/<code>.dcf</code> des RGPH.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">🧹</div>
+        <h3 class="card-title">Traitement</h3>
+        <p class="card-text">Qualité et préparation : <code>check_types()</code>, <code>check_na()</code>, <code>nettoyer_libelles()</code> (standards AFRISTAT), <code>recoder_variable()</code>, et <code>valider_qualite_donnees()</code> qui produit un rapport qualité noté sur 100 avec export PDF.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">📊</div>
+        <h3 class="card-title">Analyse</h3>
+        <p class="card-text">Statistiques pondérées compatibles plans de sondage complexes : <code>appliquer_ponderations()</code>, <code>stat_descr()</code>, <code>tab_croisee()</code> ; indicateurs de développement humain avec <code>calcul_ipm()</code>, <code>calcul_idh()</code>, <code>decomposer_inegalite()</code>.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">🗺️</div>
+        <h3 class="card-title">Visualisation</h3>
+        <p class="card-text"><code>theme_ins()</code> et <code>palette_ins()</code> pour une charte institutionnelle ; pyramides des âges, courbes de tendance et cartes thématiques exportables en PNG haute résolution et SVG.</p>
+      </div>
+      <div class="card card-sage fade-in">
+        <div class="card-icon" aria-hidden="true">📤</div>
+        <h3 class="card-title">Diffusion</h3>
+        <p class="card-text"><code>generer_rapport()</code> (Word/PDF depuis un template), <code>generer_metadonnees_ddi()</code>, <code>exporter_sdmx()</code> et <code>anonymiser_donnees()</code> pour protéger les données avant diffusion.</p>
+      </div>
+      <div class="card card-parch fade-in">
+        <div class="card-icon" aria-hidden="true">🔎</div>
+        <h3 class="card-title">Et la suite</h3>
+        <p class="card-text">La v0.2.0 (soumission CRAN prévue en septembre 2026) ajoute 13 jalons : indices FGT, 20 indicateurs ODD, IPM Alkire-Foster, cartographie de 888 subdivisions, module PIB et dashboard Shiny.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cas concrets -->
+<section id="cas" style="background:var(--white);" aria-labelledby="cas-title">
+  <div class="container">
+    <p class="section-label text-center">Sur le terrain</p>
+    <h2 id="cas-title" class="section-title text-center fade-in">Trois cas concrets</h2>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card fade-in" style="border-left:4px solid var(--pine);">
+        <h3 class="card-title text-pine">🇧🇫 EHCVM — Burkina Faso</h3>
+        <p class="card-text">8 500 ménages, 13 régions, collecte KoboToolbox. Chaîne complète et reproductible : <code>import_kobo()</code> → <code>check_na()</code> et <code>nettoyer_libelles()</code> → <code>appliquer_ponderations()</code> → <code>calcul_fgt()</code> pour la pauvreté → <code>carte_thematique()</code> → <code>generer_rapport()</code>.</p>
+      </div>
+      <div class="card fade-in" style="border-left:4px solid var(--pine);">
+        <h3 class="card-title text-pine">🇹🇩 RGPH-4 — Tchad</h3>
+        <p class="card-text">Base CSPro de 3,2 millions de ménages, 180 variables, 22 régions. <code>import_cspro()</code> charge nativement le fichier et son dictionnaire <code>.dcf</code>, décode les codes et préserve les labels. Score qualité validé à <strong>87/100</strong>, rapport PDF automatique.</p>
+      </div>
+      <div class="card fade-in" style="border-left:4px solid var(--pine);">
+        <h3 class="card-title text-pine">🇸🇳 Suivi ODD — Sénégal</h3>
+        <p class="card-text">Le rapport annuel de suivi des ODD de l'ANSD peut être entièrement automatisé avec le module ODD de la v0.2.0 : calcul des 20 indicateurs, cartographie des disparités régionales, évolution dans le temps, génération Word/PDF.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Codification ML -->
+<section id="codif" aria-labelledby="codif-title">
+  <div class="container container-sm">
+    <p class="section-label">Un chantier prospectif</p>
+    <h2 id="codif-title" class="section-title fade-in">La codification automatique par machine learning</h2>
+    <p style="font-size:1.05rem;line-height:1.75;">L'INSEE a industrialisé un modèle qui attribue automatiquement le code d'activité d'une entreprise à partir du libellé rédigé en langage naturel lors de sa création. L'intérêt n'est pas seulement le gain de temps : c'est la <strong>démarche</strong> — expérimenter un modèle, le mettre en production de façon fluide, puis surveiller sa performance dans la durée (approche dite MLOps).</p>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;">Cette recette se transpose directement aux besoins africains. Imaginons un <strong>modèle de codification automatique</strong> qui, à partir de descriptions libres saisies dans un recensement (RGPH) ou une enquête ménage (EHCVM), attribue :</p>
+    <ul style="font-size:1.05rem;line-height:1.85;margin:14px 0 0 22px;">
+      <li>le <strong>code d'activité</strong> selon la nomenclature internationale CITI/ISIC ;</li>
+      <li>le <strong>code de profession</strong> selon la CITP/ISCO.</li>
+    </ul>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;">Le point clé, souvent négligé, est la <strong>surveillance du modèle</strong> : un modèle entraîné sur des données passées perd en pertinence quand la réalité change — par exemple l'essor de l'économie des plateformes ou de la livraison à domicile, qui fait apparaître des libellés inédits. Un cycle d'amélioration continue (collecte de cas annotés, réentraînement) devient indispensable. C'est précisément le type de chantier expérimental que statAfrikR inscrit à sa feuille de route.</p>
+  </div>
+</section>
+
+<!-- Reproductibilité -->
+<section id="repro" style="background:var(--white);" aria-labelledby="repro-title">
+  <div class="container container-sm">
+    <p class="section-label">La culture data appliquée</p>
+    <h2 id="repro-title" class="section-title fade-in">Reproductibilité : Git, tests, CRAN</h2>
+    <p style="font-size:1.05rem;line-height:1.75;">L'adoption du <strong>versionnement du code</strong> est l'une des transformations les plus profondes qu'apporte la culture data à la statistique publique. Avec <strong>Git</strong>, chaque modification d'un script est tracée, la collaboration devient fluide et les résultats sont reproductibles dans le temps. Pour un INS, c'est un changement de paradigme : le code cesse d'être un fichier isolé sur un disque dur individuel pour devenir un <strong>bien commun institutionnel</strong>.</p>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;">Chaque fonction de statAfrikR est accompagnée de <strong>tests automatisés</strong>, gage de résultats corrects et stables d'une version à l'autre. Enfin, la publication sur le <strong>CRAN</strong> — l'accréditation la plus exigeante pour un package R — soumet l'outil à une batterie de vérifications sur la documentation, les exemples, les tests et la compatibilité. statAfrikR répond ainsi aux mêmes standards que les packages utilisés par l'INSEE, Eurostat ou la Banque Mondiale, mais avec la transparence de l'open source.</p>
+  </div>
+</section>
+
+<!-- Cap 2026-2030 -->
+<section id="cap" aria-labelledby="cap-title">
+  <div class="container container-sm">
+    <p class="section-label">Une trajectoire</p>
+    <h2 id="cap-title" class="section-title fade-in">Cap 2026-2030</h2>
+    <p style="font-size:1.05rem;line-height:1.75;">La <strong>v0.2.0</strong> (septembre 2026) apporte les indicateurs les plus demandés par les partenaires techniques et financiers : indices <strong>FGT</strong> (incidence, profondeur, sévérité de la pauvreté), <strong>20 indicateurs ODD</strong>, <strong>IPM Alkire-Foster</strong>, une cartographie de <strong>888 subdivisions</strong> embarquées pour un usage 100 % hors ligne, un module <strong>PIB</strong> et un <strong>dashboard Shiny</strong> — le tout adossé à plus de 200 tests unitaires validés.</p>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;">Autour du package, deux moteurs humains : la <strong>statAfrikR Academy</strong>, un programme de formation certifiante de 10 jours à trois niveaux ; et une <strong>communauté panafricaine</strong> sur Discord, organisée par zone (UEMOA, CEMAC…) et par thématique — le premier réseau de statisticiens R du continent.</p>
+    <div class="text-center" style="margin-top:36px;">
+      <a href="partenariat.html" class="btn btn-primary">Devenir INS partenaire</a>
+    </div>
+  </div>
+</section>
+
+<!-- Conclusion + sources -->
+<section id="conclusion" style="background:var(--white);" aria-labelledby="cl-title">
+  <div class="container container-sm">
+    <h2 id="cl-title" class="section-title fade-in">Une modernisation souveraine</h2>
+    <p style="font-size:1.05rem;line-height:1.75;">La transformation ne se décrète pas : elle se construit, progressivement, avec des outils adaptés, des agents formés et une vision institutionnelle claire. statAfrikR n'est pas un outil parmi d'autres — c'est une infrastructure statistique pensée pour les réalités africaines, développée par des statisticiens africains, maintenue par une communauté africaine et publiée sous licence libre. Bien équipée et bien formée, la statistique publique africaine peut devenir une référence mondiale.</p>
+    <div class="card card-parch fade-in" style="margin-top:32px;">
+      <h3 class="card-title">Sources &amp; références</h3>
+      <p class="card-text">Galiana, L. &amp; Lefebvre, O. (2026). <em>Qu'apportent les métiers de la data à la statistique publique ?</em> Courrier des statistiques, n°15, pp. 95-116, INSEE. — Foster, Greer &amp; Thorbecke (1984), <em>Econometrica</em> 52(3). — Alkire &amp; Foster (2011), <em>Journal of Public Economics</em> 95(7-8). — Amoko-Mongamo, D.-D. (2026). <em>statAfrikR</em> (v0.1.0), CRAN.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Association</span></div></a>
+        <p>Association panafricaine open source pour la statistique publique africaine. Association régie par la loi du 1<sup>er</sup> juillet 1901 · Siège social : 17 rue du Chêne Tordu, 77500 Chelles (France) · Points focaux en Afrique.</p>
+        <p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p>
+      </div>
+      <div class="footer-col"><h4>Association</h4><a href="association.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div>
+      <div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="blog.html">Blog</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a></div>
+      <div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom"><span data-i18n="footer.legal">© 2026 Association statAfrikR · Association loi 1901 · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div>
+  </div>
+</footer>
+<div class="org-tooltip" role="tooltip" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/stats.js"></script>
+</body>
+</html>
