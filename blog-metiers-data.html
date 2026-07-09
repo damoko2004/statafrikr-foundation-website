@@ -135,7 +135,7 @@
     <p class="section-label">Le socle technique</p>
     <h2 id="r-title" class="section-title fade-in">R, standard mondial — statAfrikR, son adaptation africaine</h2>
     <p style="font-size:1.05rem;line-height:1.75;">R est devenu le langage de référence de la statistique mondiale : utilisé par l'INSEE, Eurostat, l'ONU, la Banque Mondiale et le FMI, il compte plus de <strong>20 000 packages</strong> sur le CRAN. Contrairement aux logiciels propriétaires, il est gratuit, ouvert, et porté par une communauté internationale qui garantit son évolution.</p>
-    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;"><strong>statAfrikR</strong> en est l'adaptation africaine la plus avancée. Package R open source publié sur le CRAN, sa version <strong>v0.1.0</strong> propose <strong>40 fonctions réparties en 5 modules</strong> et a été téléchargée près de <strong>800 fois en trois mois</strong>. Il est conçu pour fonctionner <strong>hors ligne</strong>, en français, sur des ordinateurs modestes.</p>
+    <p style="font-size:1.05rem;line-height:1.75;margin-top:16px;"><strong>statAfrikR</strong> en est l'adaptation africaine la plus avancée. Package R open source publié sur le CRAN, sa version <strong>v0.1.0</strong> propose <strong>40 fonctions réparties en 5 modules</strong> et est déjà adoptée par une communauté grandissante de statisticiens africains. Il est conçu pour fonctionner <strong>hors ligne</strong>, en français, sur des ordinateurs modestes.</p>
     <div class="box-vision fade-in" role="blockquote" style="margin-top:28px;">
       « Un INS dont les données sont propres, traçables et harmonisées est un INS qui inspire confiance. Les décisions de politique publique ne sont jamais meilleures que les données sur lesquelles elles reposent. »
     </div>
@@ -187,20 +187,24 @@
 <section id="cas" style="background:var(--white);" aria-labelledby="cas-title">
   <div class="container">
     <p class="section-label text-center">Sur le terrain</p>
-    <h2 id="cas-title" class="section-title text-center fade-in">Trois cas concrets</h2>
-    <div class="grid-3" style="margin-top:40px;">
+    <h2 id="cas-title" class="section-title text-center fade-in">Des cas d'usage concrets</h2>
+    <p class="section-sub text-center fade-in" style="margin:0 auto 44px;">Les mêmes capacités d'automatisation, quel que soit le pays, la version des bases ou la méthodologie retenue.</p>
+    <div class="grid-3">
       <div class="card fade-in" style="border-left:4px solid var(--pine);">
         <h3 class="card-title text-pine">🇧🇫 EHCVM — Burkina Faso</h3>
-        <p class="card-text">8 500 ménages, 13 régions, collecte KoboToolbox. Chaîne complète et reproductible : <code>import_kobo()</code> → <code>check_na()</code> et <code>nettoyer_libelles()</code> → <code>appliquer_ponderations()</code> → <code>calcul_fgt()</code> pour la pauvreté → <code>carte_thematique()</code> → <code>generer_rapport()</code>.</p>
+        <p class="card-text">Automatisation des analyses de pauvreté, des indicateurs ODD, des tableaux institutionnels et des cartes statistiques à partir des données d'enquêtes auprès des ménages.</p>
       </div>
       <div class="card fade-in" style="border-left:4px solid var(--pine);">
         <h3 class="card-title text-pine">🇹🇩 RGPH-4 — Tchad</h3>
-        <p class="card-text">Base CSPro de 3,2 millions de ménages, 180 variables, 22 régions. <code>import_cspro()</code> charge nativement le fichier et son dictionnaire <code>.dcf</code>, décode les codes et préserve les labels. Score qualité validé à <strong>87/100</strong>, rapport PDF automatique.</p>
+        <p class="card-text">Automatisation de la production d'indicateurs démographiques, de tableaux normalisés, de cartes thématiques et de rapports institutionnels à partir des données du recensement national.</p>
       </div>
       <div class="card fade-in" style="border-left:4px solid var(--pine);">
-        <h3 class="card-title text-pine">🇸🇳 Suivi ODD — Sénégal</h3>
-        <p class="card-text">Le rapport annuel de suivi des ODD de l'ANSD peut être entièrement automatisé avec le module ODD de la v0.2.0 : calcul des 20 indicateurs, cartographie des disparités régionales, évolution dans le temps, génération Word/PDF.</p>
+        <h3 class="card-title text-pine">🇨🇫 RGPH — RCA</h3>
+        <p class="card-text">Automatisation des indicateurs démographiques, des tableaux normalisés, des cartes thématiques et des rapports institutionnels issus du recensement général de la population.</p>
       </div>
+    </div>
+    <div class="card card-parch fade-in" style="margin-top:26px;text-align:center;">
+      <p class="card-text" style="font-size:1.06rem;line-height:1.6;"><strong>Votre INS conduit une EHCVM, un RGPH ou un suivi des ODD ?</strong><br>statAfrikR peut automatiser votre chaîne d'analyse et de production statistique — des données brutes aux rapports et cartes. <a href="partenariat.html" style="color:var(--h-green);font-weight:700;">Écrivez-nous →</a></p>
     </div>
   </div>
 </section>
