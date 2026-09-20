@@ -44,93 +44,135 @@
   <p class="lead" data-i18n="page.rm.lead">Des associations au standard statistique africain — 3 phases, 11 jalons clés</p>
 </div></header>
 
+<!-- Maturité / positionnement -->
+<section id="maturite" aria-labelledby="mat-title">
+<div class="container">
+  <p class="section-label text-center">Où en est statAfrikR</p>
+  <h2 id="mat-title" class="section-title text-center fade-in">Une trajectoire vers la validation institutionnelle</h2>
+  <p class="section-sub text-center fade-in" style="margin:0 auto 44px;">De la publication sur le CRAN à l'adoption officielle par les instituts nationaux de statistique.</p>
+  <div class="grid-3">
+    <div class="card card-sage fade-in" style="border-top:4px solid var(--pine);">
+      <span class="badge badge-green">✅ Sur le CRAN</span>
+      <h3 class="card-title" style="margin-top:12px;">v0.2.0 — INS-ready candidate</h3>
+      <p class="card-text">Publié sur le CRAN, open source (GPL-3). Plus de 100 fonctions, 707+ tests, tableau de bord interactif et un audit interne des méthodes déjà réalisé.</p>
+    </div>
+    <div class="card card-parch fade-in" style="border-top:4px solid var(--amber);">
+      <span class="badge badge-amber">🔧 En cours</span>
+      <h3 class="card-title" style="margin-top:12px;">v0.2.1 — INS-validated (1 pays)</h3>
+      <p class="card-text">Cible mi-2027. Moteur d'estimation « design-based », normes internationales 2023-2025, confidentialité et traçabilité renforcées, et un premier pilote INS réel.</p>
+    </div>
+    <div class="card fade-in" style="border-top:4px solid var(--h-navy);">
+      <span class="badge badge-blue">🎯 Objectif</span>
+      <h3 class="card-title" style="margin-top:12px;">v1.0.0 — INS-production</h3>
+      <p class="card-text">Cible fin 2027. Trois pilotes INS ou plus, formation certifiante, procédures opérationnelles (SOP) et gouvernance — le standard de production statistique du continent.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Chantiers post-audit v0.2.1 -->
+<section id="chantiers" style="background:var(--white);" aria-labelledby="ch-title">
+<div class="container">
+  <p class="section-label text-center">Feuille de route v0.2.1 · post-audit</p>
+  <h2 id="ch-title" class="section-title text-center fade-in">Les chantiers pour la validation INS</h2>
+  <p class="section-sub text-center fade-in" style="margin:0 auto 44px;">Sept priorités issues de l'audit interne, pour hisser statAfrikR au niveau d'exigence des instituts nationaux.</p>
+  <div class="grid-3">
+    <div class="card fade-in" style="border-left:4px solid var(--pine);"><h3 class="card-title text-pine">📐 Moteur de plan de sondage unifié</h3><p class="card-text">Estimation « design-based » : intervalles de confiance corrects sous plan complexe (linéarisation de Taylor, réplication), DEFF et diagnostics de précision pour tous les indicateurs (FGT, IPM, Gini, emploi, santé…).</p></div>
+    <div class="card fade-in" style="border-left:4px solid var(--pine);"><h3 class="card-title text-pine">📏 Normes internationales à jour</h3><p class="card-text">Emploi selon la 21ᵉ CIST/ICLS 2023, comptabilité nationale SCN 2025, diffusion SDMX 3.1 — pour rester alignés sur les standards mondiaux.</p></div>
+    <div class="card fade-in" style="border-left:4px solid var(--pine);"><h3 class="card-title text-pine">🔒 Confidentialité (SDC)</h3><p class="card-text">Analyse du risque de ré-identification (k-anonymité), suppression secondaire et contrôle de divulgation statistique complet avant toute diffusion.</p></div>
+    <div class="card fade-in" style="border-left:4px solid var(--pine);"><h3 class="card-title text-pine">🧭 Traçabilité &amp; provenance</h3><p class="card-text">Graphe de provenance conforme PROV-DM / W3C, métadonnées enrichies et journal d'audit immuable pour les revues institutionnelles.</p></div>
+    <div class="card fade-in" style="border-left:4px solid var(--pine);"><h3 class="card-title text-pine">🗂️ Référentiels versionnés &amp; certification</h3><p class="card-text">Catalogue ODD par année, nomenclatures géographiques datées, cadres NQAF / GSBPM, fiches méthodologiques et certificat de sortie — des résultats reproductibles et auditables.</p></div>
+    <div class="card fade-in" style="border-left:4px solid var(--amber);"><h3 class="card-title text-pine">🤝 Pilote INS réel</h3><p class="card-text">Déploiement avec un institut partenaire (cible : INS de RCA), comparaison aux résultats officiels dans une tolérance documentée, revue méthodologique et procès-verbal de validation signé.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- Phases -->
 <section id="phases" aria-labelledby="phases-title">
 <div class="container">
   <p class="section-label text-center">Vue d'ensemble</p>
-  <h2 id="phases-title" data-i18n="title.3phases" class="section-title text-center fade-in">3 phases de développement</h2>
+  <h2 id="phases-title" class="section-title text-center fade-in">3 phases de développement</h2>
   <div class="phase-cards" style="margin-top:40px;">
     <div class="phase-card phase-pine fade-in">
       <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:6px;">PHASE 1</p>
-      <h3>2026 — Association</h3>
-      <p>Création juridique, partenariat INS fondateur, gouvernance opérationnelle, statAfrikR v0.2.0, premier financement.</p>
+      <h3>2026 — Association &amp; CRAN</h3>
+      <p>Création juridique, publication de statAfrikR v0.2.0 sur le CRAN, audit interne, premiers partenariats INS.</p>
       <ul>
         <li>Dépôt association loi 1901 en préfecture</li>
-        <li>Enregistrement marque Association statAfrikR</li>
-        <li>Signature MoU INS fondateur</li>
-        <li>Publication statAfrikR v0.2.0 sur CRAN</li>
-        <li>Premier financement institutionnel (≥ 50 000 €)</li>
+        <li>✅ statAfrikR v0.2.0 publié sur le CRAN</li>
+        <li>✅ Audit interne des méthodes réalisé</li>
+        <li>Signature MoU avec un INS partenaire</li>
+        <li>Premier financement institutionnel</li>
       </ul>
     </div>
     <div class="phase-card phase-amber fade-in">
       <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:6px;">PHASE 2</p>
-      <h3>2027 — Expansion</h3>
-      <p>5 INS fondateurs, 3 nouveaux packages CRAN, plateforme e-learning, formation certifiante, 1 000 utilisateurs.</p>
+      <h3>2027 — Validation INS</h3>
+      <p>Moteur design-based, normes 2023-2025, pilote INS réel, v0.2.1 « INS-validated », plateforme de formation.</p>
       <ul>
-        <li>statAfrikPoverty · statAfrikMaps sur CRAN</li>
+        <li>Moteur d'estimation « design-based »</li>
+        <li>Normes 21ᵉ ICLS 2023 · SCN 2025 · SDMX 3.1</li>
+        <li>Pilote INS réel (cible RCA) + PV de validation</li>
+        <li>statAfrikR v0.2.1 sur le CRAN</li>
         <li>Plateforme academy.statafrikr.org</li>
-        <li>3 sessions de formation en présentiel</li>
-        <li>Certification statAfrikR niveau 1</li>
-        <li>Budget annuel > 205 000 €</li>
       </ul>
     </div>
     <div class="phase-card phase-ink fade-in">
       <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:6px;">PHASE 3</p>
       <h3>2028 — Institutionnalisation</h3>
-      <p>10 INS membres, APIs régionales, portail statistique africain, reconnaissance UA-STATCOM, cloud statistique.</p>
+      <p>v1.0.0 « INS-production », plusieurs INS membres, APIs régionales, reconnaissance UA-STATCOM.</p>
       <ul>
-        <li>statAfrikCensus · statAfrikSDG · Dashboard</li>
-        <li>Portail statistique africain en ligne</li>
-        <li>1 000 statisticiens certifiés</li>
-        <li>Reconnaissance UA-STATCOM officielle</li>
-        <li>Budget annuel > 550 000 €</li>
+        <li>statAfrikR v1.0.0 « INS-production »</li>
+        <li>3+ pilotes INS · SOP · gouvernance</li>
+        <li>Portail statistique africain + API régionale</li>
+        <li>Réseau panafricain de statisticiens certifiés</li>
+        <li>Reconnaissance UA-STATCOM</li>
       </ul>
     </div>
   </div>
 </div>
 </section>
 
+<!-- Jalons -->
 <section id="jalons" style="background:var(--white);" aria-labelledby="jal-title">
 <div class="container container-sm">
   <p class="section-label">Jalons clés</p>
-  <h2 id="jal-title" data-i18n="title.jalons" class="section-title fade-in">11 jalons par trimestre</h2>
+  <h2 id="jal-title" class="section-title fade-in">Du CRAN à la validation institutionnelle</h2>
   <div style="margin-top:32px;">
-    <div class="timeline-item fade-in"><div class="timeline-date">T2 2026</div><div class="timeline-content"><div class="timeline-title">Création juridique</div><div class="timeline-text">Dépôt statuts + déclaration préfecture. Récépissé obtenu.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T3 2026</div><div class="timeline-content"><div class="timeline-title">Publication statAfrikR v0.2.0</div><div class="timeline-text">FGT complet · Cartographie sf · Word/Excel/PDF auto · Indicateurs ODD. Disponible sur CRAN.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T3 2026</div><div class="timeline-content"><div class="timeline-title">Signature MoU INS fondateur</div><div class="timeline-text">Protocole d'accord avec le premier INS partenaire. Point focal national officialisé.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T4 2026</div><div class="timeline-content"><div class="timeline-title">Premier financement institutionnel</div><div class="timeline-text">Objectif : ≥ 50 000 €. Source : AFRISTAT + mécénat + dotation fondateur.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T4 2026</div><div class="timeline-content"><div class="timeline-title">1re session de formation intensive</div><div class="timeline-text">20 à 30 statisticiens formés. Données nationales réelles. Premières certifications.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T1 2027</div><div class="timeline-content"><div class="timeline-title">statAfrikPoverty + statAfrikMaps sur CRAN</div><div class="timeline-text">2 packages spécialisés publiés. Pauvreté avancée · Cartographie institutionnelle.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T2 2027</div><div class="timeline-content"><div class="timeline-title">Lancement plateforme e-learning</div><div class="timeline-text">academy.statafrikr.org opérationnel. Certifications niveaux 1 et 2.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T3 2027</div><div class="timeline-content"><div class="timeline-title">5 INS partenaires signataires</div><div class="timeline-text">5 protocoles MoU signés. Réseau panafricain en place.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T4 2027</div><div class="timeline-content"><div class="timeline-title">Reconnaissance UA-STATCOM</div><div class="timeline-text">Présentation et acte officiel de reconnaissance par l'Union Africaine STATCOM.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T2 2028</div><div class="timeline-content"><div class="timeline-title">Portail statistique africain + API</div><div class="timeline-text">Portail en ligne version 1. API régionale connectée aux plateformes AFRISTAT et PARIS21.</div></div></div>
-    <div class="timeline-item fade-in"><div class="timeline-date">T4 2028</div><div class="timeline-content"><div class="timeline-title">Bilan triannuel — 10 INS · 1 000 certifiés</div><div class="timeline-text">Rapport triannuel public. Budget > 550 000 €. Standard continental établi.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">✅ 2026</div><div class="timeline-content"><div class="timeline-title">statAfrikR v0.2.0 publié sur le CRAN</div><div class="timeline-text">Plus de 100 fonctions · 707+ tests · tableau de bord Shiny · FGT, IPM, ODD, cartographie hors ligne, export SDMX/DDI. Positionnement « INS-ready candidate ».</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">✅ 2026</div><div class="timeline-content"><div class="timeline-title">Audit interne des méthodes</div><div class="timeline-text">Matrice d'audit (fonctions × critères) : diagnostic de maturité et priorités pour l'adoption par les INS.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T4 2026</div><div class="timeline-content"><div class="timeline-title">Moteur « design-based » + inventaire API</div><div class="timeline-text">Estimateurs sous plan complexe (Taylor / réplication), IC unifiés, DEFF. Inventaire exact de l'API généré automatiquement.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T4 2026</div><div class="timeline-content"><div class="timeline-title">Normes internationales à jour</div><div class="timeline-text">Emploi 21ᵉ ICLS 2023 · comptabilité nationale SCN 2025 · diffusion SDMX 3.1.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T1 2027</div><div class="timeline-content"><div class="timeline-title">Confidentialité, provenance &amp; référentiels</div><div class="timeline-text">Contrôle de divulgation (SDC), graphe de provenance PROV-DM, journal d'audit immuable, ODD versionnés par année.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T1–T2 2027</div><div class="timeline-content"><div class="timeline-title">Pilote INS réel (cible RCA)</div><div class="timeline-text">Analyse d'une enquête réelle, comparaison aux résultats officiels, revue méthodologique et procès-verbal de validation signé.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T2 2027</div><div class="timeline-content"><div class="timeline-title">statAfrikR v0.2.1 — « INS-validated »</div><div class="timeline-text">Publication sur le CRAN. Moteur design-based, normes 2023-2025, 900+ tests dont golden datasets institutionnels.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T3 2027</div><div class="timeline-content"><div class="timeline-title">Réseau d'INS partenaires</div><div class="timeline-text">Plusieurs protocoles MoU signés. Formation certifiante et communauté panafricaine.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">T4 2027</div><div class="timeline-content"><div class="timeline-title">statAfrikR v1.0.0 — « INS-production »</div><div class="timeline-text">Trois pilotes INS ou plus, procédures opérationnelles (SOP), gouvernance et documentation complète.</div></div></div>
+    <div class="timeline-item fade-in"><div class="timeline-date">2028</div><div class="timeline-content"><div class="timeline-title">Reconnaissance UA-STATCOM · Portail africain</div><div class="timeline-text">Portail statistique africain et API régionale. Standard continental établi.</div></div></div>
   </div>
 </div>
 </section>
 
+<!-- Écosystème -->
 <section id="ecosysteme" aria-labelledby="eco-title">
 <div class="container">
-  <p class="section-label text-center">Écosystème cible 2028</p>
-  <h2 id="eco-title" data-i18n="title.ecosys" class="section-title text-center fade-in">12 packages et plateformes</h2>
+  <p class="section-label text-center">Écosystème cible</p>
+  <h2 id="eco-title" class="section-title text-center fade-in">Un écosystème de packages et de plateformes</h2>
   <div class="grid-4" style="margin-top:32px;">
-    <div class="card fade-in" style="border-left:3px solid var(--pine);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v0.1.0</h4><span class="badge badge-green">✅ Disponible</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Package fondateur · 40 fonctions</p></div>
-    <div class="card fade-in" style="border-left:3px solid var(--amber);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v0.2.0</h4><span class="badge badge-amber">🔧 T3 2026</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">FGT · Carto sf · Word/PDF · ODD</p></div>
-    <div class="card fade-in" style="border-left:3px solid var(--amber);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v1.0.0</h4><span class="badge badge-amber">📦 2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Multilingue · API Kobo · Shiny</p></div>
+    <div class="card fade-in" style="border-left:3px solid var(--pine);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v0.2.0</h4><span class="badge badge-green">✅ Sur le CRAN</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">100+ fonctions · 707+ tests · dashboard</p></div>
+    <div class="card fade-in" style="border-left:3px solid var(--amber);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v0.2.1</h4><span class="badge badge-amber">🔧 2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Design-based · Normes 2023-2025 · pilote INS</p></div>
+    <div class="card fade-in" style="border-left:3px solid var(--h-navy);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikR v1.0.0</h4><span class="badge badge-blue">🎯 2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">INS-production · SOP · gouvernance</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--ink);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikPoverty</h4><span class="badge badge-blue">2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Pauvreté avancée · IPM · Gini</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--ink);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikMaps</h4><span class="badge badge-blue">2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Cartographie sf · Nomenclatures</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--ink);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikSurvey</h4><span class="badge badge-blue">2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">MICS · EDS · EHCVM · Sondage</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--slate);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikCensus</h4><span class="badge badge-ink">2028</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">RGPH · CSPro · Projections</p></div>
-    <div class="card fade-in" style="border-left:3px solid var(--slate);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikSDG</h4><span class="badge badge-ink">2028</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">ODD · PARIS21 · Suivi régional</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--slate);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">statAfrikDashboard</h4><span class="badge badge-ink">2028</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Shiny pré-configuré INS</p></div>
-    <div class="card fade-in" style="border-left:3px solid var(--slate);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">API régionale</h4><span class="badge badge-ink">2028</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">REST · Portails nationaux</p></div>
-    <div class="card fade-in" style="border-left:3px solid var(--slate);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">Portail statistique</h4><span class="badge badge-ink">2028</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">Données · APIs · Publications</p></div>
     <div class="card fade-in" style="border-left:3px solid var(--pine);"><h4 class="card-title" style="font-family:var(--font-code);font-size:0.9rem;">academy.statafrikr</h4><span class="badge badge-amber">2027</span><p class="card-text" style="font-size:0.82rem;margin-top:8px;">E-learning · Certifications</p></div>
   </div>
 </div>
 </section>
 
 </main>
-<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Association</span></div></a><p>Association panafricaine open source régie par la loi du 1<sup>er</sup> juillet 1901. Siège social : 17 rue du Chêne Tordu, 77500 Chelles (France) · Points focaux en Afrique.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Association</h4><a href="association.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="blog.html">Blog</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.1.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Association statAfrikR · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer><div class="org-tooltip" role="tooltip" aria-live="polite"></div><script src="assets/js/main.js"></script>
+<footer class="footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="nav-logo" style="text-decoration:none;"><div class="nav-logo-mark">S</div><div class="nav-logo-text"><span class="nav-logo-name">statAfrikR</span><span class="nav-logo-sub">Association</span></div></a><p>Association panafricaine open source régie par la loi du 1<sup>er</sup> juillet 1901. Siège social : 17 rue du Chêne Tordu, 77500 Chelles (France) · Points focaux en Afrique.</p><p style="margin-top:12px;"><a href="mailto:diamoko@gmail.com" style="color:var(--amber);">diamoko@gmail.com</a></p></div><div class="footer-col"><h4>Association</h4><a href="association.html">Vision &amp; Mission</a><a href="gouvernance.html" data-i18n="nav.gouvernance">Gouvernance</a><a href="roadmap.html">Feuille de route</a><a href="financement.html">Modèle économique</a><a href="partenariat.html">Devenir partenaire</a></div><div class="footer-col"><h4 data-i18n="footer.col3">Ressources</h4><a href="package.html">Architecture</a><a href="formation.html">Formation 10 jours</a><a href="blog.html">Blog</a><a href="communaute.html" data-i18n="nav.communaute">Communauté</a><a href="https://cran.r-project.org/web/packages/statAfrikR/index.html" target="_blank" rel="noopener">CRAN</a><a href="https://damoko2004.github.io/statAfrikR/" target="_blank" rel="noopener">Documentation</a></div><div class="footer-col"><h4>Ressources</h4><a href="https://cran.r-project.org/web/packages/statAfrikR/vignettes/demarrage-rapide.html" target="_blank" rel="noopener">Démarrage rapide</a><a href="https://www.rdocumentation.org/packages/statAfrikR/versions/0.2.0" target="_blank" rel="noopener">RDocumentation</a><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Association statAfrikR · GPL-3</span><div class="footer-links"><a href="https://github.com/damoko2004/statAfrikR" target="_blank" rel="noopener">GitHub</a><a href="https://discord.gg/kcfA27Yz" target="_blank" rel="noopener">Discord</a><a href="contact.html">Contact</a></div></div></div></footer><div class="org-tooltip" role="tooltip" aria-live="polite"></div><script src="assets/js/main.js"></script>
 <script src="assets/js/i18n.js"></script><script src="assets/js/stats.js"></script>
 </body></html>
