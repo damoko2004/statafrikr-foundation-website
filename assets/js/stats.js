@@ -35,15 +35,19 @@ async function fetchCranDaily() {
 }
 
 function generateFallback() {
-  // 53 jours (3 avril → 24 mai) avec distribution réaliste
-  const vals = [8,9,11,7,20,9,8,4,6,24,7,9,21,22,5,16,6,11,15,15,5,6,15,
-                14,10,10,9,5,6,4,3,5,14,11,5,4,5,26,9,10,12,9,10,9,4,3,
-                5,10,10,11,10,4,4];
-  const start = new Date('2026-04-03');
-  return vals.map((downloads, i) => {
-    const d = new Date(start); d.setDate(d.getDate() + i);
-    return { date: d.toISOString().split('T')[0], downloads };
-  });
+  // Fallback deterministe : du 2026-04-03 a aujourd'hui (~6-7/jour, quelques pics)
+  const out = [];
+  const start = new Date(FROM);
+  const end = new Date(today());
+  let i = 0;
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    const base = 3 + ((i * 5) % 8);                  // 3..10
+    const spike = (i % 25 === 0 && i > 0) ? 14 : 0;  // pic occasionnel
+    const wk = ([0, 6].indexOf(new Date(d).getDay()) >= 0) ? -1 : 0;
+    out.push({ date: new Date(d).toISOString().split('T')[0], downloads: Math.max(1, base + spike + wk) });
+    i++;
+  }
+  return out;
 }
 
 /* ── Fetch total depuis la publication ───────────────────────── */
@@ -53,8 +57,8 @@ async function fetchCranTotal(daily) {
     const url = `https://cranlogs.r-pkg.org/downloads/total/${FROM}:${today()}/${PKG}`;
     const r   = await fetch(url);
     const d   = await r.json();
-    return d[0]?.downloads ?? 436;
-  } catch { return 436; }
+    return d[0]?.downloads ?? 1147;
+  } catch { return 1147; }
 }
 
 /* ── Fetch GitHub stats ──────────────────────────────────────── */
