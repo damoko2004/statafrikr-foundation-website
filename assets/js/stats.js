@@ -95,7 +95,7 @@ function updateCounters(total, daily) {
     e.textContent = total.toLocaleString('fr-FR');
   });
 
-  // Titre dynamique "X téléchargements en un mois"
+  // Titre dynamique "X téléchargements"
   document.querySelectorAll('.cran-title-count').forEach(e => {
     e.textContent = total.toLocaleString('fr-FR') + ' téléchargements';
   });
