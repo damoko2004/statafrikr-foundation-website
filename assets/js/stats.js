@@ -41,7 +41,7 @@ function generateFallback() {
   const end = new Date(today());
   let i = 0;
   for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-    const base = 3 + ((i * 5) % 8);                  // 3..10
+    const base = 4 + ((i * 5) % 8);                  // 3..10
     const spike = (i % 25 === 0 && i > 0) ? 14 : 0;  // pic occasionnel
     const wk = ([0, 6].indexOf(new Date(d).getDay()) >= 0) ? -1 : 0;
     out.push({ date: new Date(d).toISOString().split('T')[0], downloads: Math.max(1, base + spike + wk) });
@@ -57,8 +57,8 @@ async function fetchCranTotal(daily) {
     const url = `https://cranlogs.r-pkg.org/downloads/total/${FROM}:${today()}/${PKG}`;
     const r   = await fetch(url);
     const d   = await r.json();
-    return d[0]?.downloads ?? 1147;
-  } catch { return 1147; }
+    return d[0]?.downloads ?? 1220;
+  } catch { return 1220; }
 }
 
 /* ── Fetch GitHub stats ──────────────────────────────────────── */

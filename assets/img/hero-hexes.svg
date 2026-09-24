@@ -21,7 +21,7 @@
           fill="rgba(248,250,252,0.98)">statAfrikR</text>
     <text x="124" y="101" text-anchor="middle"
           font-family="'Courier New',monospace" font-size="9"
-          fill="rgba(203,213,225,0.85)">v0.2.0</text>
+          fill="rgba(203,213,225,0.85)">v0.2.1</text>
   </g>
   <g class="hs" style="--d:0.22s;--t:4.8s;--a:13px;--r:0.75deg">
     <polygon points="319.7,127.0 252.2,166.0 184.6,127.0 184.6,49.0 252.2,10.0 319.7,49.0" fill="rgba(255,255,255,0.5)"/>
